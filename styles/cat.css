@@ -1,0 +1,76 @@
+/* ========================== */
+/* MAIN CSS */
+/* ========================== */
+
+body {
+    margin: 0;
+    height: 100dvh;
+
+    display: grid;
+    place-items: center;
+
+    perspective: 30em;
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+}
+
+
+.red {
+    position: fixed;
+    width: 10em;
+    aspect-ratio: 1;
+    background-color: red;
+    rotate: x 90deg;
+    transform-origin: bottom center;
+    opacity: .5;
+}
+
+.blue {
+    position: fixed;
+    width: 10em;
+    aspect-ratio: 1;
+    background-color: blue;
+    opacity: .5;
+    translate: 5em 0 -5em;
+    rotate: y 90deg;
+    transform-origin: center center;
+}
+
+.green {
+    position: fixed;
+    width: 10em;
+    aspect-ratio: 1;
+    background-color: green;
+    opacity: .5;
+    translate: -5em 0 -5em;
+    rotate: y 90deg;
+    transform-origin: center center;
+}
+
+.yellow {
+    position: fixed;
+    width: 10em;
+    aspect-ratio: 1;
+    background-color: yellow;
+    rotate: x -90deg;
+    transform-origin: top center;
+    opacity: .5;
+}
+
+
+
+/* .red {
+    background-color: red;
+    translate: 5em 0 10em;
+    transform-origin: left center;
+    rotate: y 45deg;
+    opacity: .5;
+  }
+  
+  .blue {
+    background-color: blue;
+    translate: -5em 0 10em;
+    transform-origin: right center;
+    rotate: y -45deg;
+    opacity: .5;
+  } */
