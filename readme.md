@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CCS to the rescue <br> David Bijl
 
 ---
@@ -81,3 +82,10 @@ Output ↓↓↓<br>
 **Updates:** <br>updates hier...
 
 ---
+=======
+# CCS to the rescue
+## David Bijl
+
+### Week 1
+#- 24 feb t/m 28 feb
+>>>>>>> 3e4ad15dc134b57ee029134e9c1eeb391cf312bc
