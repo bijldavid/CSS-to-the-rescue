@@ -32,7 +32,6 @@ div {
     background-color: red;
     rotate: x 90deg;
     transform-origin: bottom center;
-
 }
 
 .blue {
@@ -54,6 +53,8 @@ div {
     rotate: x -90deg;
     transform-origin: top center;
 }
+
+etc...
 ```
 
 Output ↓↓↓<br>

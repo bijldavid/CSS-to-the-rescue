@@ -26,7 +26,6 @@ div {
     background-color: red;
     rotate: x 90deg;
     transform-origin: bottom center;
-
 }
 
 .blue {
@@ -54,4 +53,39 @@ div {
     translate: -5em -10em -5em;
     rotate: y 90deg;
     transform-origin: center center;
+}
+
+.orange {
+    background-color: orange;
+    translate: 5em -10em -5em;
+    rotate: y 90deg;
+    transform-origin: center center;
+}
+
+.turquoise {
+    background-color: turquoise;
+    rotate: x -90deg;
+    translate: 0 -10em 0;
+    transform-origin: top center;
+}
+
+.gold {
+    background-color: gold;
+    translate: -5em 10em -5em;
+    rotate: y 90deg;
+    transform-origin: center center;
+}
+
+.black {
+    background-color: black;
+    translate: 5em 10em -5em;
+    rotate: y 90deg;
+    transform-origin: center center;
+}
+
+.lightpink {
+    background-color: lightpink;
+    rotate: x 90deg;
+    translate: 0 10em 0;
+    transform-origin: bottom center;
 }
