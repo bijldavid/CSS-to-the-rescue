@@ -48,3 +48,10 @@ div {
     rotate: x -90deg;
     transform-origin: top center;
 }
+
+.purple {
+    background-color: purple;
+    translate: -5em -10em -5em;
+    rotate: y 90deg;
+    transform-origin: center center;
+}
