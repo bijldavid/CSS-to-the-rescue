@@ -58,7 +58,7 @@ etc...
 ```
 
 Output ↓↓↓<br>
-<img src="images/readme-images/cube.png" width="710" height="530">
+<img src="images/readme-images/cube-stack.png" width="710" height="530">
 
 ---
 
