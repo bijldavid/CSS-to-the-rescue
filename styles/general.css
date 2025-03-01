@@ -3,8 +3,26 @@
 /* ========================== */
 
 :root {
-  /* colors */
+  /* ===== colors ===== */
+  /* whites */
+  --white-100: hsl(4, 0%, 86%);
+  --white-200: hsl(4, 0%, 83%);
+  --white-300: hsl(4, 0%, 80%);
+  --white-400: hsl(4, 0%, 75%);
+  --white-500: hsl(4, 0%, 69%);
 
+  /* grays */
+  --gray-bright: hsl(0, 0%, 45%);
+  --gray-100: hsl(0, 0%, 35%);
+  --gray-200: hsl(0, 0%, 30%);
+  --gray-300: hsl(0, 0%, 25%);
+  --gray-400: hsl(0, 0%, 22%);
+  --gray-500: hsl(0, 0%, 16%);
+
+  /* eye */
+  --green: hsl(127, 36%, 67%);
+  --pink: hsl(307, 22%, 53%);
+  --black: hsl(0, 0%, 9%);
 
   /* fonts */
   --heavy: 900;

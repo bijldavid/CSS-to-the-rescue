@@ -1,0 +1,246 @@
+/* ========================== */
+/* MAIN CSS */
+/* ========================== */
+
+body {
+    background-color: hsl(0, 4%, 11%);
+    margin: 0;
+    height: 100dvh;
+
+    display: grid;
+    place-items: center;
+
+    perspective: 40em;
+    perspective-origin: center center;
+    transform-style: preserve-3d;
+}
+
+body * {
+    transform-style: preserve-3d;
+}
+
+div {
+    position: absolute;
+}
+
+div::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+}
+
+/* front */
+div:nth-of-type(1)::before {
+    opacity: 0;
+}
+
+/* back */
+div:nth-of-type(2)::before {
+    opacity: .5;
+}
+
+/* bottom top */
+div:nth-of-type(3)::before,
+div:nth-of-type(4)::before {
+    opacity: .3;
+}
+
+/* right left */
+div:nth-of-type(5)::before,
+div:nth-of-type(6)::before {
+    opacity: .15;
+}
+
+cat header {
+    position: absolute;
+    /* rotate: 1 .5 -1 90deg; */
+    /* transform: rotateX(-40deg) rotateY(20deg); */
+    animation: rotation 8s ease infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotateX(-50deg) rotateY(-40deg);
+    }
+
+    50% {
+        transform: rotateX(-50deg) rotateY(40deg);
+    }
+
+    100% {
+        transform: rotateX(-50deg) rotateY(-40deg);
+    }
+}
+
+cat header>div {
+    width: 12em;
+    height: 10em;
+    translate: -6em -5em 6em;
+}
+
+/* front */
+cat header>div:nth-of-type(1) {}
+
+/* back */
+cat header>div:nth-of-type(2) {
+    translate: -6em -5em -6em;
+}
+
+/* bottom */
+cat header>div:nth-of-type(3) {
+    transform-origin: bottom;
+    rotate: x 90deg;
+    height: 12em;
+    translate: -6em -7em 6em;
+}
+
+/* top */
+cat header>div:nth-of-type(4) {
+    transform-origin: top;
+    rotate: x -90deg;
+    height: 12em;
+}
+
+/* right */
+cat header>div:nth-of-type(5) {
+    transform-origin: right;
+    rotate: y -90deg;
+}
+
+/* left */
+cat header>div:nth-of-type(6) {
+    transform-origin: left;
+    rotate: y 90deg;
+}
+
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+/* MOUTH */
+
+mouth {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+mouth div {
+    width: 7.2em;
+    height: 50%;
+}
+
+/* front */
+mouth div:nth-of-type(1) {
+    translate: 2.4em 100% 2em;
+}
+
+/* bottom */
+mouth div:nth-of-type(2) {
+    height: 2em;
+    translate: 2.4em 8em 0;
+    transform-origin: bottom;
+    rotate: x -90deg;
+}
+
+/* top */
+mouth div:nth-of-type(3) {
+    height: 2em;
+    translate: 2.4em 3em 0;
+    transform-origin: bottom;
+    rotate: x -90deg;
+}
+
+/* right */
+mouth div:nth-of-type(4) {
+    width: 2em;
+    height: 50%;
+    translate: 9.6em 100% 0;
+    transform-origin: left;
+    rotate: y -90deg;
+}
+
+/* left */
+mouth div:nth-of-type(5) {
+    width: 2em;
+    height: 50%;
+    translate: 2.4em 100% 0;
+    transform-origin: left;
+    rotate: y -90deg;
+}
+
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+/* EARS */
+
+ears {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+ears>div:nth-of-type(1) {
+    translate: 1.2em 7.2em 0;
+    width: 2.4em;
+    height: 4.8em;
+}
+
+ears>div:nth-of-type(2) {
+    translate: 8.4em 7.2em 0;
+    width: 2.4em;
+    height: 4.8em;
+}
+
+ears>div div {
+    width: 2.4em;
+    height: 4.8em;
+}
+
+/* front */
+ears>div div:nth-of-type(1) {
+    width: 2.4em;
+    height: 2em;
+    translate: 0 0 0;
+    transform-origin: top;
+    rotate: x -90deg;
+}
+
+/* back */
+ears>div div:nth-of-type(2) {
+    width: 2.4em;
+    height: 2em;
+    translate: 0 2.8em 0;
+    transform-origin: bottom;
+    rotate: x 90deg;
+}
+
+/* top */
+ears>div div:nth-of-type(3) {
+    width: 2.4em;
+    height: 4.8em;
+    translate: 0 0 -2em;
+}
+
+/* bottom */
+ears>div div:nth-of-type(4) {
+    display: none;
+}
+
+/* right */
+ears>div div:nth-of-type(5) {
+    width: 2em;
+    height: 4.8em;
+    translate: 0 0 0;
+    transform-origin: left;
+    rotate: y 90deg;
+}
+
+/* left */
+ears>div div:nth-of-type(6) {
+    width: 2em;
+    height: 4.8em;
+    translate: 2.4em 0 0;
+    transform-origin: left;
+    rotate: y 90deg;
+}
