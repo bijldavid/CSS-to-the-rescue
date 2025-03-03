@@ -32,7 +32,7 @@
   --medium: 500;
   --light: 400;
 
-  /* headings */
+  /* measurements */
 
   /* paragraphs */
 
@@ -75,4 +75,49 @@ img {
 
 .invisible {
   display: none;
+}
+
+/* ========================== */
+/* SET UP */
+/* ========================== */
+
+body {
+  background-color: hsl(0, 4%, 11%);
+  margin: 0;
+  height: 100dvh;
+
+  display: grid;
+  place-items: center;
+
+  perspective: 40em;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+body * {
+  transform-style: preserve-3d;
+}
+
+div {
+  position: absolute;
+}
+
+cat {
+  position: absolute;
+  /* transform: rotateX(-20deg) rotateY(20deg); */
+  animation: rotation 8s ease infinite;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotateX(-30deg) rotateY(40deg);
+  }
+
+  50% {
+      transform: rotateX(-30deg) rotateY(-70deg);
+  }
+
+  100% {
+      transform: rotateX(-30deg) rotateY(40deg);
+  }
 }
