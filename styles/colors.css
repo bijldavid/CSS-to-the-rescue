@@ -193,10 +193,10 @@ header>div:nth-of-type(6) {
 
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-/* MOUTH */
+/* mondje */
 
 /* front */
-mouth div:nth-of-type(1) {
+mouth>div:nth-of-type(1) {
     background:
         linear-gradient(90deg,
             var(--white-200) 0%, var(--white-200) 33.3%,
@@ -211,22 +211,22 @@ mouth div:nth-of-type(1) {
 }
 
 /* back */
-mouth div:nth-of-type(2) {
+mouth>div:nth-of-type(2) {
     /* nothing */
 }
 
 /* top */
-mouth div:nth-of-type(3) {
+mouth>div:nth-of-type(3) {
     background-color: var(--white-300);
 }
 
 /* bottom */
-mouth div:nth-of-type(4) {
+mouth>div:nth-of-type(4) {
     background-color: var(--white-300);
 }
 
 /* left */
-mouth div:nth-of-type(5) {
+mouth>div:nth-of-type(5) {
     background:
         linear-gradient(90deg,
             var(--white-200) 0%, var(--white-200) 100%) no-repeat 0% 0%,
@@ -237,7 +237,7 @@ mouth div:nth-of-type(5) {
 }
 
 /* right */
-mouth div:nth-of-type(6) {
+mouth>div:nth-of-type(6) {
     background:
         linear-gradient(90deg,
             var(--white-200) 0%, var(--white-200) 100%) no-repeat 0% 0%,

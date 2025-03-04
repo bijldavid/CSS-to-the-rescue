@@ -101,23 +101,3 @@ body * {
 div {
   position: absolute;
 }
-
-cat {
-  position: absolute;
-  /* transform: rotateX(-20deg) rotateY(20deg); */
-  animation: rotation 8s ease infinite;
-}
-
-@keyframes rotation {
-  0% {
-      transform: rotateX(-30deg) rotateY(40deg);
-  }
-
-  50% {
-      transform: rotateX(-30deg) rotateY(-70deg);
-  }
-
-  100% {
-      transform: rotateX(-30deg) rotateY(40deg);
-  }
-}
