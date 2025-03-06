@@ -1,6 +1,6 @@
 cat {
     position: absolute;
-    /* transform: rotateX(-20deg) rotateY(20deg); */
+    /* transform: rotateX(-20deg) rotateY(35deg); */
     animation: rotation 8s ease infinite;
 }
 
@@ -20,7 +20,7 @@ cat {
 
 
 cat {
-    --cat-pixel: .5em;
+    --cat-pixel: 1em;
     --cat-x: calc(var(--cat-pixel) * 1);
     --cat-y: calc(var(--cat-pixel) * 1);
     --cat-z: calc(var(--cat-pixel) * 1);
