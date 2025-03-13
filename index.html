@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/shapes.css">
+    <link rel="stylesheet" href="styles/controls.css">
     <title>Kat</title>
 </head>
 
@@ -56,7 +57,25 @@
                 </header>
             </div>
             <!-- back -->
-            <div></div>
+            <div>
+                <tail>
+                    <div></div>
+                    <div>
+                        <tail2>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </tail2>
+                    </div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </tail>
+            </div>
             <!-- top -->
             <div></div>
             <!-- bottom -->
@@ -100,6 +119,61 @@
             <div></div>
         </torso>
     </cat>
+
+
+
+    <section>
+        <div>
+            <label for="cat-controls">Cat controls</label>
+            <input id="cat-controls" type="checkbox"></input>
+        </div>
+        <form>
+            <fieldset>
+                <label for="torso">Torso</label>
+                <input checked id="torso" type="radio" name="toggle">
+                <label for="head">Head</label>
+                <input id="head" type="radio" name="toggle">
+            </fieldset>
+            <fieldset>
+                <legend>Torso</legend>
+                <label>
+                    Torso-x
+                    <input type="range" min="0" max="10" value="4" step="any" name="torso-x" data-unit="em">
+                </label>
+                <label>
+                    Torso-y
+                    <input type="range" min="0" max="15" value="6" step="any" name="torso-y" data-unit="em">
+                </label>
+                <label>
+                    Torso-z
+                    <input type="range" min="0" max="30" value="16" step="any" name="torso-z" data-unit="em">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Head</legend>
+                <label>
+                    Head-x
+                    <input type="range" min="0" max="10" value="5" step="any" name="head-x" data-unit="em">
+                </label>
+                <label>
+                    Head-y
+                    <input type="range" min="0" max="10" value="4" step="any" name="head-y" data-unit="em">
+                </label>
+                <label>
+                    Head-z
+                    <input type="range" min="0" max="10" value="5" step="any" name="head-z" data-unit="em">
+                </label>
+            </fieldset>
+            <button type="reset">Reset</button>
+        </form>
+    </section>
+
+
+    <label>
+        Camera
+        <input type="range" min="0" max="720" value="330" step="any" name="camera-rotation" data-unit="deg">
+    </label>
+    <script src="script.js"></script>
 </body>
 
 </html>

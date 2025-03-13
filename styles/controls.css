@@ -1,0 +1,148 @@
+:root {
+    --controls-bg-500: #151515;
+    --controls-bg-400: #1D1B1B;
+    --controls-bg-300: #252323;
+    --controls-bg-200: #292727;
+    --controls-bg-100: #464646;
+
+    --controls-border-200: #969696;
+    --controls-border-100: #E5E5E5;
+}
+
+
+/* ========================== */
+/* CAMERA */
+/* ========================== */
+
+body>label {
+    position: absolute;
+    left: 50%;
+    bottom: 4em;
+    translate: -50% 0;
+}
+
+
+
+
+/* -=-=-=-=-=-=- GENERAL STYLING -=-=-=-=-=-=- */
+
+form fieldset:not(fieldset:nth-of-type(1)) {
+    background-color: green;
+    border: none;
+}
+
+form label { 
+    font-size: .75em;
+}
+
+
+/* ========================== */
+/* CONTROLS */
+/* ========================== */
+
+section {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    width: 12.5em;
+    background-color: var(--controls-bg-400);
+    border: 1px solid var(--controls-border-200);
+    border-radius: 15px;
+    padding: .8em 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* -=-=-=-=-=-=- CHECKBOX + h1 -=-=-=-=-=-=- */
+
+section>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+section div label {
+    font-size: 1em;
+    font-weight: var(--extra-bold);
+}
+
+section:has(> div > input:checked) form {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form {
+    display: none;
+}
+
+/* -=-=-=-=-=-=- FIELDSET 1 -=-=-=-=-=-=- */
+
+fieldset:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    gap: .25em;
+    border: 1px solid var(--controls-border-200);
+    background-color: var(--controls-bg-100);
+    border-radius: .33em;
+}
+
+form:has(fieldset:nth-of-type(1) input:nth-of-type(1):checked) fieldset:nth-of-type(3) {
+    display: none;
+}
+
+form:has(fieldset:nth-of-type(1) input:nth-of-type(2):checked) fieldset:nth-of-type(2) {
+    display: none;
+}
+
+fieldset:nth-of-type(1) input {
+    display: none;
+}
+
+fieldset:nth-of-type(1):has(input:nth-of-type(1):checked) label:nth-of-type(1) {
+    background-color: var(--controls-bg-500);
+    outline: solid 1px var(--controls-border-100);
+}
+
+fieldset:nth-of-type(1):has(input:nth-of-type(2):checked) label:nth-of-type(2) {
+    background-color: var(--controls-bg-500);
+    outline: solid 1px var(--controls-border-100);
+}
+
+fieldset:nth-of-type(1) label:nth-of-type(1) {
+    padding: .5em 1em;
+    border-radius: .33em;
+    width: 7ch;
+}
+
+fieldset:nth-of-type(1) label:nth-of-type(2) {
+    padding: .5em 1em;
+    border-radius: .33em;
+    text-align: center;
+}
+
+
+/* -=-=-=-=-=-=- FIELDSET 2 & 3 -=-=-=-=-=-=- */
+
+form fieldset:nth-of-type(1) ~ fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form fieldset:nth-of-type(1) ~ fieldset label {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    background-color: var(--controls-bg-500);
+    padding: 1em;
+    border-radius: 7.5px;
+    border: 1px solid var(--controls-border-200);
+}
+
+form fieldset:nth-of-type(1) ~ fieldset label input {
+    width: calc(100% - 3rem);
+    margin-left: auto;
+}

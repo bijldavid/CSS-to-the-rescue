@@ -24,19 +24,13 @@
   --pink: hsl(307, 22%, 53%);
   --black: hsl(0, 0%, 9%);
 
-  /* fonts */
-  --heavy: 900;
-  --extra-bold: 800;
-  --bold: 700;
-  --demi-bold: 600;
-  --medium: 500;
-  --light: 400;
-
-  /* measurements */
-
-  /* paragraphs */
-
-  /* padding */
+    /* fonts */
+    --heavy: 900;
+    --extra-bold: 800;
+    --bold: 700;
+    --demi-bold: 600;
+    --medium: 500;
+    --light: 400;
 
   interpolate-size: allow-keywords;
 }
@@ -63,9 +57,22 @@ h2,
 h3,
 h4,
 a,
-p {
+p,
+label,
+fieldset {
   font-family: "articulat-cf", sans-serif;
   font-style: normal;
+  color: var(--white-100);
+}
+
+legend {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 img {
@@ -82,7 +89,7 @@ img {
 /* ========================== */
 
 body {
-  background-color: hsl(0, 4%, 11%);
+  background-color: #1d1b1b;
   margin: 0;
   height: 100dvh;
 
@@ -94,10 +101,10 @@ body {
   transform-style: preserve-3d;
 }
 
-body * {
+cat * {
   transform-style: preserve-3d;
 }
 
-div {
+cat div {
   position: absolute;
 }
