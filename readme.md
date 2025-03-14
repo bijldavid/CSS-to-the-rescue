@@ -104,13 +104,41 @@ Volgende week is mijn doel om de kat helemaal af te maken:<br>
 - De textures volledig rondom afmaken.
 Daarna wil ik gaan beginnen aan de interface zelf. Dus knoppen verzinnen en spelen met een slider.
 
-
 ---
 
 > ## Week 3
 > **<sub><sup>10 t/m 14 mar</sup></sub>**
 
-**Updates:** <br>updates hier...
+**Nieuw voor mij:**<br>
+<ul>
+    <li>Spelen met de :has() selector</li>
+    <li>CSS nesten</li>
+    <li>Het <code>~</code> symbool gebruiken in CSS selectors</li>
+    <li>Sliders koppelen aan custom properties</li>
+    <li>De <code>input type="range"</code> stylen</li>
+</ul>
+
+**Progressie:** <br>
+Ik heb deze week veel herhaald. De kat bestaat natuurlijk uit enorm veel linear gradients, wat behoorlijk wat tijd kostte. Het textureren van alle zijden was een vrij langzaam proces, maar leverde uiteindelijk een mooi resultaat op.
+
+Toen de kat volledig getextureerd was, kon ik verder met het koppelen van de custom variables aan de sliders. Hiervoor gebruikte ik een klein beetje JavaScript, de javascript heb ik gekopieerd uit een voorbeeld. Het uitvinden hoe het werkte verliep heel soepel, en al snel waren de sliders gekoppeld.
+
+Nadat dit werkte, ben ik gaan nadenken over hoe ik het interface van de sliders wilde visualiseren. Ik had hiervoor snel een ontwerp gemaakt en ben nu bezig met het nabouwen van dit design.<br>
+<img width="465" height="400" src="images/readme-images/interface.png">
+
+```
+*/ code voor het uitklap systeem /*
+section:has(> div > input:checked) form {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+```
+
+Voor volgende week wil ik graag:<br>
+- Een slider toevoegen die aan de been animatie gekoppeld is & ook de <code>translateY()</code> van de hele kat bepaald.
+- Extra interactie toevoegen waar mogelijk
 
 ---
 

@@ -27,11 +27,10 @@ body>label {
 /* -=-=-=-=-=-=- GENERAL STYLING -=-=-=-=-=-=- */
 
 form fieldset:not(fieldset:nth-of-type(1)) {
-    background-color: green;
     border: none;
 }
 
-form label { 
+form label {
     font-size: .75em;
 }
 
@@ -44,11 +43,11 @@ section {
     position: absolute;
     top: 2em;
     right: 2em;
-    width: 12.5em;
-    background-color: var(--controls-bg-400);
+    width: 15em;
+    background-color: var(--controls-bg-300);
     border: 1px solid var(--controls-border-200);
-    border-radius: 15px;
-    padding: .8em 1.5em;
+    border-radius: 10px;
+    padding: .8em 1em;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -111,28 +110,23 @@ fieldset:nth-of-type(1):has(input:nth-of-type(2):checked) label:nth-of-type(2) {
     outline: solid 1px var(--controls-border-100);
 }
 
-fieldset:nth-of-type(1) label:nth-of-type(1) {
-    padding: .5em 1em;
-    border-radius: .33em;
-    width: 7ch;
-}
-
+fieldset:nth-of-type(1) label:nth-of-type(1),
 fieldset:nth-of-type(1) label:nth-of-type(2) {
     padding: .5em 1em;
     border-radius: .33em;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
-
 
 /* -=-=-=-=-=-=- FIELDSET 2 & 3 -=-=-=-=-=-=- */
 
-form fieldset:nth-of-type(1) ~ fieldset {
+form fieldset:nth-of-type(1)~fieldset {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-form fieldset:nth-of-type(1) ~ fieldset label {
+form fieldset:nth-of-type(1)~fieldset label {
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -142,7 +136,23 @@ form fieldset:nth-of-type(1) ~ fieldset label {
     border: 1px solid var(--controls-border-200);
 }
 
-form fieldset:nth-of-type(1) ~ fieldset label input {
-    width: calc(100% - 3rem);
-    margin-left: auto;
+form fieldset:nth-of-type(1)~fieldset label div {
+    position: relative;
+    width: 100%;
+    padding: 1.25em .75em 1.25em 3em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+    background-color: var(--controls-bg-300);
+}
+
+form fieldset:nth-of-type(1)~fieldset label div::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 50%;
+    left: 1.2em;
+    translate: 0 -50%;
+    background-color: #fff;
 }
