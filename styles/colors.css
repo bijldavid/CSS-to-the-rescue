@@ -1,3 +1,95 @@
+:root {
+    /* whites */
+    --white-100: hsl(4, 0%, 86%);
+    --white-200: hsl(4, 0%, 83%);
+    --white-300: hsl(4, 0%, 80%);
+    --white-400: hsl(4, 0%, 75%);
+    --white-500: hsl(4, 0%, 69%);
+
+    /* grays */
+    --gray-bright: hsl(0, 0%, 45%);
+    --gray-100: hsl(0, 0%, 35%);
+    --gray-200: hsl(0, 0%, 30%);
+    --gray-300: hsl(0, 0%, 25%);
+    --gray-400: hsl(0, 0%, 22%);
+    --gray-500: hsl(0, 0%, 16%);
+
+    /* orange */
+    --orange-bright: hsl(28, 65%, 73%);
+    --orange-100: hsl(28, 65%, 65%);
+    --orange-200: hsl(28, 65%, 60%);
+    --orange-300: hsl(28, 65%, 55%);
+    --orange-400: hsl(28, 65%, 50%);
+    --orange-500: hsl(28, 65%, 45%);
+
+    /* brown */
+    --brown-bright: hsl(19, 20%, 34%);
+    --brown-100: hsl(19, 20%, 30%);
+    --brown-200: hsl(19, 20%, 28%);
+    --brown-300: hsl(19, 20%, 25%);
+    --brown-400: hsl(19, 20%, 22%);
+    --brown-500: hsl(19, 20%, 18%);
+
+    /* eye */
+    --green: hsl(127, 36%, 67%);
+    --pink: hsl(307, 22%, 53%);
+    --black: hsl(0, 0%, 9%);
+}
+
+html:has([value="gray"]:checked) {
+    --gray: true;
+}
+
+html:has([value="orange"]:checked) {
+    --orange: true;
+}
+
+html:has([value="brown"]:checked) {
+    --brown: true;
+}
+
+body {
+    container-type: style;
+}
+
+/* ========================== */
+/* QUERIES */
+/* ========================== */
+
+@container style(--gray: true) {
+    body {
+        --colored-bright: var(--gray-bright);
+        --colored-100: var(--gray-100);
+        --colored-200: var(--gray-200);
+        --colored-300: var(--gray-300);
+        --colored-400: var(--gray-400);
+        --colored-500: var(--gray-500);
+    }
+}
+
+@container style(--orange: true) {
+    body {
+        --colored-bright: var(--orange-bright);
+        --colored-100: var(--orange-100);
+        --colored-200: var(--orange-200);
+        --colored-300: var(--orange-300);
+        --colored-400: var(--orange-400);
+        --colored-500: var(--orange-500);
+    }
+}
+
+@container style(--brown: true) {
+    body {
+        --colored-bright: var(--brown-bright);
+        --colored-100: var(--brown-100);
+        --colored-200: var(--brown-200);
+        --colored-300: var(--brown-300);
+        --colored-400: var(--brown-400);
+        --colored-500: var(--brown-500);
+    }
+}
+
+
 /* ========================== */
 /* SHADING */
 /* ========================== */
@@ -49,14 +141,16 @@ cat div:nth-of-type(6)::before {
 
 torso {
 
+
+
     /* front */
     &>div:nth-of-type(1) {
         background:
             linear-gradient(90deg,
-                var(--gray-300) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-300) 100%) no-repeat 0% 0%,
+                var(--colored-300) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-300) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
                 var(--white-300) 25%,
@@ -94,27 +188,27 @@ torso {
     &>div:nth-of-type(2) {
         background:
             linear-gradient(90deg,
-                var(--gray-100) 25%,
-                0, var(--gray-200) 50%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-300) 100%) no-repeat 0% 0%,
+                var(--colored-100) 25%,
+                0, var(--colored-200) 50%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-300) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
-                var(--gray-300) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-400) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 20%,
+                var(--colored-300) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-400) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 20%,
 
             linear-gradient(90deg,
-                var(--gray-100) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-100) 100%) no-repeat 0% 40%,
+                var(--colored-100) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-100) 100%) no-repeat 0% 40%,
 
             linear-gradient(90deg,
                 var(--white-300) 25%,
-                0, var(--gray-100) 50%,
-                0, var(--gray-100) 75%,
+                0, var(--colored-100) 50%,
+                0, var(--colored-100) 75%,
                 0, var(--white-300) 100%) no-repeat 0% 60%,
 
             linear-gradient(90deg,
@@ -135,82 +229,82 @@ torso {
     &>div:nth-of-type(3) {
         background:
             linear-gradient(90deg,
-                var(--gray-100) 25%,
-                0, var(--gray-200) 50%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-300) 100%) no-repeat 0% 0%,
+                var(--colored-100) 25%,
+                0, var(--colored-200) 50%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-300) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
-                var(--gray-300) 25%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-400) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 6.66%,
+                var(--colored-300) 25%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-400) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 6.66%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-400) 75%,
-                0, var(--gray-300) 100%) no-repeat 0% 13.33%,
+                var(--colored-400) 25%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-400) 75%,
+                0, var(--colored-300) 100%) no-repeat 0% 13.33%,
 
             linear-gradient(90deg,
-                var(--gray-200) 25%,
-                0, var(--gray-100) 50%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-300) 100%) no-repeat 0% 19.99%,
+                var(--colored-200) 25%,
+                0, var(--colored-100) 50%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-300) 100%) no-repeat 0% 19.99%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-400) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 26.66%,
+                var(--colored-400) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-400) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 26.66%,
 
             linear-gradient(90deg,
-                var(--gray-100) 25%,
-                0, var(--gray-200) 50%,
-                0, var(--gray-100) 75%,
-                0, var(--gray-100) 100%) no-repeat 0% 33.33%,
+                var(--colored-100) 25%,
+                0, var(--colored-200) 50%,
+                0, var(--colored-100) 75%,
+                0, var(--colored-100) 100%) no-repeat 0% 33.33%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-400) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 39.99%,
+                var(--colored-400) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-400) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 39.99%,
 
             linear-gradient(90deg,
-                var(--gray-200) 25%,
-                0, var(--gray-100) 50%,
-                0, var(--gray-100) 75%,
-                0, var(--gray-300) 100%) no-repeat 0% 46.66%,
+                var(--colored-200) 25%,
+                0, var(--colored-100) 50%,
+                0, var(--colored-100) 75%,
+                0, var(--colored-300) 100%) no-repeat 0% 46.66%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-200) 100%) no-repeat 0% 53.33%,
+                var(--colored-400) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-200) 100%) no-repeat 0% 53.33%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 59.99%,
+                var(--colored-400) 25%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 59.99%,
 
             linear-gradient(90deg,
-                var(--gray-300) 25%,
-                0, var(--gray-200) 50%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-200) 100%) no-repeat 0% 66.66%,
+                var(--colored-300) 25%,
+                0, var(--colored-200) 50%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-200) 100%) no-repeat 0% 66.66%,
 
             linear-gradient(90deg,
-                var(--gray-300) 25%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-500) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 73.33%,
+                var(--colored-300) 25%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-500) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 73.33%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 79.99%,
+                var(--colored-400) 25%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 79.99%,
 
             linear-gradient(90deg,
                 var(--white-100) 25%,
@@ -225,10 +319,10 @@ torso {
                 0, var(--white-200) 100%) no-repeat 0% 93.33%,
 
             linear-gradient(90deg,
-                var(--gray-400) 25%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-400) 75%,
-                0, var(--gray-400) 100%) no-repeat 0% 100%;
+                var(--colored-400) 25%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-400) 75%,
+                0, var(--colored-400) 100%) no-repeat 0% 100%;
         background-size: 100% 6.25%;
     }
 
@@ -338,22 +432,22 @@ torso {
     &>div:nth-of-type(5) {
         background:
             linear-gradient(90deg,
-                var(--gray-400) 6.25%,
+                var(--colored-400) 6.25%,
                 0, var(--white-200) 12.5%,
                 0, var(--white-100) 18.75%,
-                0, var(--gray-200) 25%,
-                0, var(--gray-400) 31.25%,
-                0, var(--gray-300) 37.5%,
-                0, var(--gray-400) 43.75%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 56.25%,
-                0, var(--gray-300) 62.5%,
-                0, var(--gray-200) 68.75%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-300) 81.25%,
-                0, var(--gray-200) 87.5%,
-                0, var(--gray-200) 93.75%,
-                0, var(--gray-100) 100%) no-repeat 0% 0%,
+                0, var(--colored-200) 25%,
+                0, var(--colored-400) 31.25%,
+                0, var(--colored-300) 37.5%,
+                0, var(--colored-400) 43.75%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 56.25%,
+                0, var(--colored-300) 62.5%,
+                0, var(--colored-200) 68.75%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-300) 81.25%,
+                0, var(--colored-200) 87.5%,
+                0, var(--colored-200) 93.75%,
+                0, var(--colored-100) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
                 var(--white-300) 6.25%,
@@ -361,17 +455,17 @@ torso {
                 0, var(--white-100) 18.75%,
                 0, var(--white-100) 25%,
                 0, var(--white-400) 31.25%,
-                0, var(--gray-100) 37.5%,
-                0, var(--gray-300) 43.75%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-400) 56.25%,
-                0, var(--gray-200) 62.5%,
-                0, var(--gray-400) 68.75%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-400) 81.25%,
-                0, var(--gray-100) 87.5%,
-                0, var(--gray-300) 93.75%,
-                0, var(--gray-200) 100%) no-repeat 0% 20%,
+                0, var(--colored-100) 37.5%,
+                0, var(--colored-300) 43.75%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-400) 56.25%,
+                0, var(--colored-200) 62.5%,
+                0, var(--colored-400) 68.75%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-400) 81.25%,
+                0, var(--colored-100) 87.5%,
+                0, var(--colored-300) 93.75%,
+                0, var(--colored-200) 100%) no-repeat 0% 20%,
 
             linear-gradient(90deg,
                 var(--white-400) 6.25%,
@@ -379,17 +473,17 @@ torso {
                 0, var(--white-200) 18.75%,
                 0, var(--white-200) 25%,
                 0, var(--white-300) 31.25%,
-                0, var(--gray-200) 37.5%,
-                0, var(--gray-300) 43.75%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-300) 56.25%,
-                0, var(--gray-100) 62.5%,
-                0, var(--gray-300) 68.75%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-400) 81.25%,
-                0, var(--gray-100) 87.5%,
-                0, var(--gray-300) 93.75%,
-                0, var(--gray-300) 100%) no-repeat 0% 40%,
+                0, var(--colored-200) 37.5%,
+                0, var(--colored-300) 43.75%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-300) 56.25%,
+                0, var(--colored-100) 62.5%,
+                0, var(--colored-300) 68.75%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-400) 81.25%,
+                0, var(--colored-100) 87.5%,
+                0, var(--colored-300) 93.75%,
+                0, var(--colored-300) 100%) no-repeat 0% 40%,
 
             linear-gradient(90deg,
                 var(--white-400) 6.25%,
@@ -397,17 +491,17 @@ torso {
                 0, var(--white-300) 18.75%,
                 0, var(--white-400) 25%,
                 0, var(--white-300) 31.25%,
-                0, var(--gray-100) 37.5%,
+                0, var(--colored-100) 37.5%,
                 0, var(--white-100) 43.75%,
                 0, var(--white-400) 50%,
-                0, var(--gray-100) 56.25%,
-                0, var(--gray-200) 62.5%,
-                0, var(--gray-300) 68.75%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-400) 81.25%,
-                0, var(--gray-200) 87.5%,
+                0, var(--colored-100) 56.25%,
+                0, var(--colored-200) 62.5%,
+                0, var(--colored-300) 68.75%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-400) 81.25%,
+                0, var(--colored-200) 87.5%,
                 0, var(--white-500) 93.75%,
-                0, var(--gray-100) 100%) no-repeat 0% 60%,
+                0, var(--colored-100) 100%) no-repeat 0% 60%,
 
             linear-gradient(90deg,
                 var(--white-500) 6.25%,
@@ -419,12 +513,12 @@ torso {
                 0, var(--white-100) 43.75%,
                 0, var(--white-100) 50%,
                 0, var(--white-300) 56.25%,
-                0, var(--gray-100) 62.5%,
-                0, var(--gray-300) 68.75%,
+                0, var(--colored-100) 62.5%,
+                0, var(--colored-300) 68.75%,
                 0, var(--white-500) 75%,
-                0, var(--gray-100) 81.25%,
-                0, var(--gray-300) 87.5%,
-                0, var(--gray-300) 93.75%,
+                0, var(--colored-100) 81.25%,
+                0, var(--colored-300) 87.5%,
+                0, var(--colored-300) 93.75%,
                 0, var(--white-500) 100%) no-repeat 0% 80%,
 
             linear-gradient(90deg,
@@ -441,7 +535,7 @@ torso {
                 0, var(--white-400) 68.75%,
                 0, var(--white-500) 75%,
                 0, var(--white-400) 81.25%,
-                0, var(--gray-100) 87.5%,
+                0, var(--colored-100) 87.5%,
                 0, var(--white-200) 93.75%,
                 0, var(--white-500) 100%) no-repeat 0% 100%;
         background-size: 100% 16.7%;
@@ -451,22 +545,22 @@ torso {
     &>div:nth-of-type(6) {
         background:
             linear-gradient(90deg,
-                var(--gray-400) 6.25%,
+                var(--colored-400) 6.25%,
                 0, var(--white-200) 12.5%,
                 0, var(--white-100) 18.75%,
-                0, var(--gray-200) 25%,
-                0, var(--gray-400) 31.25%,
-                0, var(--gray-300) 37.5%,
-                0, var(--gray-400) 43.75%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 56.25%,
-                0, var(--gray-300) 62.5%,
-                0, var(--gray-200) 68.75%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-300) 81.25%,
-                0, var(--gray-200) 87.5%,
-                0, var(--gray-200) 93.75%,
-                0, var(--gray-100) 100%) no-repeat 0% 0%,
+                0, var(--colored-200) 25%,
+                0, var(--colored-400) 31.25%,
+                0, var(--colored-300) 37.5%,
+                0, var(--colored-400) 43.75%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 56.25%,
+                0, var(--colored-300) 62.5%,
+                0, var(--colored-200) 68.75%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-300) 81.25%,
+                0, var(--colored-200) 87.5%,
+                0, var(--colored-200) 93.75%,
+                0, var(--colored-100) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
                 var(--white-300) 6.25%,
@@ -474,17 +568,17 @@ torso {
                 0, var(--white-100) 18.75%,
                 0, var(--white-100) 25%,
                 0, var(--white-400) 31.25%,
-                0, var(--gray-100) 37.5%,
-                0, var(--gray-300) 43.75%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-400) 56.25%,
-                0, var(--gray-200) 62.5%,
-                0, var(--gray-400) 68.75%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-400) 81.25%,
-                0, var(--gray-100) 87.5%,
-                0, var(--gray-300) 93.75%,
-                0, var(--gray-200) 100%) no-repeat 0% 20%,
+                0, var(--colored-100) 37.5%,
+                0, var(--colored-300) 43.75%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-400) 56.25%,
+                0, var(--colored-200) 62.5%,
+                0, var(--colored-400) 68.75%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-400) 81.25%,
+                0, var(--colored-100) 87.5%,
+                0, var(--colored-300) 93.75%,
+                0, var(--colored-200) 100%) no-repeat 0% 20%,
 
             linear-gradient(90deg,
                 var(--white-400) 6.25%,
@@ -492,17 +586,17 @@ torso {
                 0, var(--white-200) 18.75%,
                 0, var(--white-200) 25%,
                 0, var(--white-300) 31.25%,
-                0, var(--gray-200) 37.5%,
-                0, var(--gray-300) 43.75%,
-                0, var(--gray-300) 50%,
-                0, var(--gray-300) 56.25%,
-                0, var(--gray-100) 62.5%,
-                0, var(--gray-300) 68.75%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-400) 81.25%,
-                0, var(--gray-100) 87.5%,
-                0, var(--gray-300) 93.75%,
-                0, var(--gray-300) 100%) no-repeat 0% 40%,
+                0, var(--colored-200) 37.5%,
+                0, var(--colored-300) 43.75%,
+                0, var(--colored-300) 50%,
+                0, var(--colored-300) 56.25%,
+                0, var(--colored-100) 62.5%,
+                0, var(--colored-300) 68.75%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-400) 81.25%,
+                0, var(--colored-100) 87.5%,
+                0, var(--colored-300) 93.75%,
+                0, var(--colored-300) 100%) no-repeat 0% 40%,
 
             linear-gradient(90deg,
                 var(--white-400) 6.25%,
@@ -510,17 +604,17 @@ torso {
                 0, var(--white-300) 18.75%,
                 0, var(--white-400) 25%,
                 0, var(--white-300) 31.25%,
-                0, var(--gray-100) 37.5%,
+                0, var(--colored-100) 37.5%,
                 0, var(--white-100) 43.75%,
                 0, var(--white-400) 50%,
-                0, var(--gray-100) 56.25%,
-                0, var(--gray-200) 62.5%,
-                0, var(--gray-300) 68.75%,
-                0, var(--gray-300) 75%,
-                0, var(--gray-400) 81.25%,
-                0, var(--gray-200) 87.5%,
+                0, var(--colored-100) 56.25%,
+                0, var(--colored-200) 62.5%,
+                0, var(--colored-300) 68.75%,
+                0, var(--colored-300) 75%,
+                0, var(--colored-400) 81.25%,
+                0, var(--colored-200) 87.5%,
                 0, var(--white-500) 93.75%,
-                0, var(--gray-100) 100%) no-repeat 0% 60%,
+                0, var(--colored-100) 100%) no-repeat 0% 60%,
 
             linear-gradient(90deg,
                 var(--white-500) 6.25%,
@@ -532,12 +626,12 @@ torso {
                 0, var(--white-100) 43.75%,
                 0, var(--white-100) 50%,
                 0, var(--white-300) 56.25%,
-                0, var(--gray-100) 62.5%,
-                0, var(--gray-300) 68.75%,
+                0, var(--colored-100) 62.5%,
+                0, var(--colored-300) 68.75%,
                 0, var(--white-500) 75%,
-                0, var(--gray-100) 81.25%,
-                0, var(--gray-300) 87.5%,
-                0, var(--gray-300) 93.75%,
+                0, var(--colored-100) 81.25%,
+                0, var(--colored-300) 87.5%,
+                0, var(--colored-300) 93.75%,
                 0, var(--white-500) 100%) no-repeat 0% 80%,
 
             linear-gradient(90deg,
@@ -554,7 +648,7 @@ torso {
                 0, var(--white-400) 68.75%,
                 0, var(--white-500) 75%,
                 0, var(--white-400) 81.25%,
-                0, var(--gray-100) 87.5%,
+                0, var(--colored-100) 87.5%,
                 0, var(--white-200) 93.75%,
                 0, var(--white-500) 100%) no-repeat 0% 100%;
         background-size: 100% 16.7%;
@@ -574,7 +668,7 @@ tail {
 
     /* back */
     &>div:nth-of-type(2) {
-        background-color: var(--gray-200);
+        background-color: var(--colored-200);
 
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* TAIL2 */
@@ -588,62 +682,62 @@ tail {
 
             /* back */
             &>div:nth-of-type(2) {
-                background-color: var(--gray-200);
+                background-color: var(--colored-200);
             }
 
             /* top */
             &>div:nth-of-type(3) {
                 background: linear-gradient(180deg,
-                        var(--gray-100) 12.5%,
-                        0, var(--gray-200) 25%,
-                        0, var(--gray-300) 37.5%,
-                        0, var(--gray-400) 50%,
-                        0, var(--gray-300) 62.5%,
-                        0, var(--gray-200) 75%,
-                        0, var(--gray-200) 87.5%,
-                        0, var(--gray-100) 100%) no-repeat 0% 0%;
+                        var(--colored-100) 12.5%,
+                        0, var(--colored-200) 25%,
+                        0, var(--colored-300) 37.5%,
+                        0, var(--colored-400) 50%,
+                        0, var(--colored-300) 62.5%,
+                        0, var(--colored-200) 75%,
+                        0, var(--colored-200) 87.5%,
+                        0, var(--colored-100) 100%) no-repeat 0% 0%;
                 background-size: 100% 100%;
             }
 
             /* bottom */
             &>div:nth-of-type(4) {
                 background: linear-gradient(180deg,
-                        var(--gray-100) 12.5%,
-                        0, var(--gray-200) 25%,
-                        0, var(--gray-300) 37.5%,
-                        0, var(--gray-400) 50%,
-                        0, var(--gray-300) 62.5%,
-                        0, var(--gray-200) 75%,
-                        0, var(--gray-200) 87.5%,
-                        0, var(--gray-100) 100%) no-repeat 0% 0%;
+                        var(--colored-100) 12.5%,
+                        0, var(--colored-200) 25%,
+                        0, var(--colored-300) 37.5%,
+                        0, var(--colored-400) 50%,
+                        0, var(--colored-300) 62.5%,
+                        0, var(--colored-200) 75%,
+                        0, var(--colored-200) 87.5%,
+                        0, var(--colored-100) 100%) no-repeat 0% 0%;
                 background-size: 100% 100%;
             }
 
             /* left */
             &>div:nth-of-type(5) {
                 background: linear-gradient(90deg,
-                        var(--gray-100) 12.5%,
-                        0, var(--gray-200) 25%,
-                        0, var(--gray-300) 37.5%,
-                        0, var(--gray-400) 50%,
-                        0, var(--gray-300) 62.5%,
-                        0, var(--gray-200) 75%,
-                        0, var(--gray-200) 87.5%,
-                        0, var(--gray-100) 100%) no-repeat 0% 0%;
+                        var(--colored-100) 12.5%,
+                        0, var(--colored-200) 25%,
+                        0, var(--colored-300) 37.5%,
+                        0, var(--colored-400) 50%,
+                        0, var(--colored-300) 62.5%,
+                        0, var(--colored-200) 75%,
+                        0, var(--colored-200) 87.5%,
+                        0, var(--colored-100) 100%) no-repeat 0% 0%;
                 background-size: 100% 100%;
             }
 
             /* right */
             &>div:nth-of-type(6) {
                 background: linear-gradient(90deg,
-                        var(--gray-100) 12.5%,
-                        0, var(--gray-200) 25%,
-                        0, var(--gray-300) 37.5%,
-                        0, var(--gray-400) 50%,
-                        0, var(--gray-300) 62.5%,
-                        0, var(--gray-200) 75%,
-                        0, var(--gray-200) 87.5%,
-                        0, var(--gray-100) 100%) no-repeat 0% 0%;
+                        var(--colored-100) 12.5%,
+                        0, var(--colored-200) 25%,
+                        0, var(--colored-300) 37.5%,
+                        0, var(--colored-400) 50%,
+                        0, var(--colored-300) 62.5%,
+                        0, var(--colored-200) 75%,
+                        0, var(--colored-200) 87.5%,
+                        0, var(--colored-100) 100%) no-repeat 0% 0%;
                 background-size: 100% 100%;
             }
         }
@@ -652,28 +746,28 @@ tail {
     /* top */
     &>div:nth-of-type(3) {
         background: linear-gradient(180deg,
-                var(--gray-400) 12.5%,
-                0, var(--gray-200) 25%,
-                0, var(--gray-300) 37.5%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 62.5%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-200) 87.5%,
-                0, var(--gray-100) 100%) no-repeat 0% 0%;
+                var(--colored-400) 12.5%,
+                0, var(--colored-200) 25%,
+                0, var(--colored-300) 37.5%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 62.5%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-200) 87.5%,
+                0, var(--colored-100) 100%) no-repeat 0% 0%;
         background-size: 100% 100%;
     }
 
     /* bottom */
     &>div:nth-of-type(4) {
         background: linear-gradient(180deg,
-                var(--gray-400) 12.5%,
-                0, var(--gray-200) 25%,
-                0, var(--gray-300) 37.5%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 62.5%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-200) 87.5%,
-                0, var(--gray-100) 100%) no-repeat 0% 0%;
+                var(--colored-400) 12.5%,
+                0, var(--colored-200) 25%,
+                0, var(--colored-300) 37.5%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 62.5%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-200) 87.5%,
+                0, var(--colored-100) 100%) no-repeat 0% 0%;
         background-size: 100% 100%;
     }
 
@@ -681,28 +775,28 @@ tail {
     /* left */
     &>div:nth-of-type(5) {
         background: linear-gradient(90deg,
-                var(--gray-400) 12.5%,
-                0, var(--gray-200) 25%,
-                0, var(--gray-300) 37.5%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 62.5%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-200) 87.5%,
-                0, var(--gray-100) 100%) no-repeat 0% 0%;
+                var(--colored-400) 12.5%,
+                0, var(--colored-200) 25%,
+                0, var(--colored-300) 37.5%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 62.5%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-200) 87.5%,
+                0, var(--colored-100) 100%) no-repeat 0% 0%;
         background-size: 100% 100%;
     }
 
     /* right */
     &>div:nth-of-type(6) {
         background: linear-gradient(90deg,
-                var(--gray-400) 12.5%,
-                0, var(--gray-200) 25%,
-                0, var(--gray-300) 37.5%,
-                0, var(--gray-400) 50%,
-                0, var(--gray-300) 62.5%,
-                0, var(--gray-200) 75%,
-                0, var(--gray-200) 87.5%,
-                0, var(--gray-100) 100%) no-repeat 0% 0%;
+                var(--colored-400) 12.5%,
+                0, var(--colored-200) 25%,
+                0, var(--colored-300) 37.5%,
+                0, var(--colored-400) 50%,
+                0, var(--colored-300) 62.5%,
+                0, var(--colored-200) 75%,
+                0, var(--colored-200) 87.5%,
+                0, var(--colored-100) 100%) no-repeat 0% 0%;
         background-size: 100% 100%;
     }
 }
@@ -957,7 +1051,7 @@ lb-leg>div:nth-of-type(5) {
             0, var(--gray-300) 100%) no-repeat 0% 0%,
 
         linear-gradient(90deg,
-            var(--gray-100) 20%,
+            var(--colored-100) 20%,
             0, var(--white-400) 40%,
             0, var(--white-400) 60%,
             0, var(--white-400) 80%,
@@ -1009,7 +1103,7 @@ rb-leg>div:nth-of-type(6) {
             0, var(--gray-300) 100%) no-repeat 0% 0%,
 
         linear-gradient(90deg,
-            var(--gray-100) 20%,
+            var(--colored-100) 20%,
             0, var(--white-400) 40%,
             0, var(--white-400) 60%,
             0, var(--white-400) 80%,
@@ -1044,11 +1138,11 @@ header {
     /* front */
     &>div:nth-of-type(1) {
         background: linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-400) 40%,
+                var(--colored-300) 20%,
+                0, var(--colored-400) 40%,
                 0, var(--white-300) 60%,
-                0, var(--gray-400) 80%,
-                0, var(--gray-400) 100%) no-repeat 0% 0%,
+                0, var(--colored-400) 80%,
+                0, var(--colored-400) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
                 var(--green) 20%,
@@ -1139,18 +1233,18 @@ header {
     /* back */
     &>div:nth-of-type(2) {
         background: linear-gradient(90deg,
-                var(--gray-400) 20%,
-                0, var(--gray-300) 40%,
-                0, var(--gray-300) 60%,
-                0, var(--gray-200) 80%,
-                0, var(--gray-200) 100%) no-repeat 0% 0%,
+                var(--colored-400) 20%,
+                0, var(--colored-300) 40%,
+                0, var(--colored-300) 60%,
+                0, var(--colored-200) 80%,
+                0, var(--colored-200) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-300) 40%,
-                0, var(--gray-300) 60%,
-                0, var(--gray-300) 80%,
-                0, var(--gray-300) 100%) no-repeat 0% 33.3%,
+                var(--colored-300) 20%,
+                0, var(--colored-300) 40%,
+                0, var(--colored-300) 60%,
+                0, var(--colored-300) 80%,
+                0, var(--colored-300) 100%) no-repeat 0% 33.3%,
 
             linear-gradient(90deg,
                 var(--white-200) 20%,
@@ -1171,39 +1265,39 @@ header {
     /* top */
     &>div:nth-of-type(3) {
         background: linear-gradient(90deg,
-                var(--gray-400) 20%,
-                0, var(--gray-300) 40%,
-                0, var(--gray-100) 60%,
-                0, var(--gray-300) 80%,
-                0, var(--gray-400) 100%) no-repeat 0% 0%,
+                var(--colored-400) 20%,
+                0, var(--colored-300) 40%,
+                0, var(--colored-100) 60%,
+                0, var(--colored-300) 80%,
+                0, var(--colored-400) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-200) 40%,
-                0, var(--gray-400) 60%,
-                0, var(--gray-300) 80%,
-                0, var(--gray-200) 100%) no-repeat 0% 25%,
+                var(--colored-300) 20%,
+                0, var(--colored-200) 40%,
+                0, var(--colored-400) 60%,
+                0, var(--colored-300) 80%,
+                0, var(--colored-200) 100%) no-repeat 0% 25%,
 
             linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-400) 40%,
-                0, var(--gray-200) 60%,
-                0, var(--gray-400) 80%,
-                0, var(--gray-200) 100%) no-repeat 0% 50%,
+                var(--colored-300) 20%,
+                0, var(--colored-400) 40%,
+                0, var(--colored-200) 60%,
+                0, var(--colored-400) 80%,
+                0, var(--colored-200) 100%) no-repeat 0% 50%,
 
             linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-400) 40%,
-                0, var(--gray-300) 60%,
-                0, var(--gray-400) 80%,
-                0, var(--gray-300) 100%) no-repeat 0% 75%,
+                var(--colored-300) 20%,
+                0, var(--colored-400) 40%,
+                0, var(--colored-300) 60%,
+                0, var(--colored-400) 80%,
+                0, var(--colored-300) 100%) no-repeat 0% 75%,
 
             linear-gradient(90deg,
-                var(--gray-200) 20%,
-                0, var(--gray-300) 40%,
-                0, var(--gray-300) 60%,
-                0, var(--gray-300) 80%,
-                0, var(--gray-200) 100%) no-repeat 0% 100%;
+                var(--colored-200) 20%,
+                0, var(--colored-300) 40%,
+                0, var(--colored-300) 60%,
+                0, var(--colored-300) 80%,
+                0, var(--colored-200) 100%) no-repeat 0% 100%;
         background-size: 100% 21%;
 
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
@@ -1214,24 +1308,24 @@ header {
             /* front */
             &>div>div:nth-of-type(1) {
                 background: linear-gradient(90deg,
-                        var(--gray-400) 0%, var(--gray-400) 100%) no-repeat 0% 100%;
+                        var(--colored-400) 0%, var(--colored-400) 100%) no-repeat 0% 100%;
                 background-size: 100% 100%;
             }
 
             /* back */
             &>div>div:nth-of-type(2) {
                 background: linear-gradient(90deg,
-                        var(--gray-200) 0%, var(--gray-200) 100%) no-repeat 0% 100%;
+                        var(--colored-200) 0%, var(--colored-200) 100%) no-repeat 0% 100%;
                 background-size: 100% 100%;
             }
 
             /* top */
             &>div>div:nth-of-type(3) {
                 background: linear-gradient(90deg,
-                        var(--gray-200) 0%, var(--gray-200) 100%) no-repeat 0% 0%,
+                        var(--colored-200) 0%, var(--colored-200) 100%) no-repeat 0% 0%,
 
                     linear-gradient(90deg,
-                        var(--gray-300) 0%, var(--gray-300) 100%) no-repeat 0% 100%;
+                        var(--colored-300) 0%, var(--colored-300) 100%) no-repeat 0% 100%;
                 background-size: 100% 50%;
             }
 
@@ -1243,20 +1337,20 @@ header {
             /* left */
             &>div>div:nth-of-type(5) {
                 background: linear-gradient(90deg,
-                        var(--gray-200) 0%, var(--gray-200) 100%) no-repeat 0% 0%,
+                        var(--colored-200) 0%, var(--colored-200) 100%) no-repeat 0% 0%,
 
                     linear-gradient(90deg,
-                        var(--gray-300) 0%, var(--gray-300) 100%) no-repeat 0% 100%;
+                        var(--colored-300) 0%, var(--colored-300) 100%) no-repeat 0% 100%;
                 background-size: 100% 50%;
             }
 
             /* right */
             &>div>div:nth-of-type(6) {
                 background: linear-gradient(90deg,
-                        var(--gray-200) 0%, var(--gray-200) 100%) no-repeat 0% 0%,
+                        var(--colored-200) 0%, var(--colored-200) 100%) no-repeat 0% 0%,
 
                     linear-gradient(90deg,
-                        var(--gray-300) 0%, var(--gray-300) 100%) no-repeat 0% 100%;
+                        var(--colored-300) 0%, var(--colored-300) 100%) no-repeat 0% 100%;
                 background-size: 100% 50%;
             }
         }
@@ -1304,24 +1398,24 @@ header {
     /* left */
     &>div:nth-of-type(5) {
         background: linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-200) 40%,
-                0, var(--gray-300) 60%,
-                0, var(--gray-400) 80%,
-                0, var(--gray-400) 100%) no-repeat 0% 0%,
+                var(--colored-300) 20%,
+                0, var(--colored-200) 40%,
+                0, var(--colored-300) 60%,
+                0, var(--colored-400) 80%,
+                0, var(--colored-400) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
-                var(--gray-bright) 20%,
-                0, var(--gray-500) 40%,
-                0, var(--gray-200) 60%,
-                0, var(--gray-200) 80%,
-                0, var(--gray-300) 100%) no-repeat 0% 33.3%,
+                var(--colored-bright) 20%,
+                0, var(--colored-500) 40%,
+                0, var(--colored-200) 60%,
+                0, var(--colored-200) 80%,
+                0, var(--colored-300) 100%) no-repeat 0% 33.3%,
 
             linear-gradient(90deg,
                 var(--white-300) 20%,
-                0, var(--gray-bright) 40%,
-                0, var(--gray-400) 60%,
-                0, var(--gray-bright) 80%,
+                0, var(--colored-bright) 40%,
+                0, var(--colored-400) 60%,
+                0, var(--colored-bright) 80%,
                 0, var(--white-500) 100%) no-repeat 0% 66.6%,
 
             linear-gradient(90deg,
@@ -1336,24 +1430,24 @@ header {
     /* right */
     &>div:nth-of-type(6) {
         background: linear-gradient(90deg,
-                var(--gray-300) 20%,
-                0, var(--gray-200) 40%,
-                0, var(--gray-300) 60%,
-                0, var(--gray-400) 80%,
-                0, var(--gray-400) 100%) no-repeat 0% 0%,
+                var(--colored-300) 20%,
+                0, var(--colored-200) 40%,
+                0, var(--colored-300) 60%,
+                0, var(--colored-400) 80%,
+                0, var(--colored-400) 100%) no-repeat 0% 0%,
 
             linear-gradient(90deg,
-                var(--gray-bright) 20%,
-                0, var(--gray-500) 40%,
-                0, var(--gray-200) 60%,
-                0, var(--gray-200) 80%,
-                0, var(--gray-300) 100%) no-repeat 0% 33.3%,
+                var(--colored-bright) 20%,
+                0, var(--colored-500) 40%,
+                0, var(--colored-200) 60%,
+                0, var(--colored-200) 80%,
+                0, var(--colored-300) 100%) no-repeat 0% 33.3%,
 
             linear-gradient(90deg,
                 var(--white-300) 20%,
-                0, var(--gray-bright) 40%,
-                0, var(--gray-400) 60%,
-                0, var(--gray-bright) 80%,
+                0, var(--colored-bright) 40%,
+                0, var(--colored-400) 60%,
+                0, var(--colored-bright) 80%,
                 0, var(--white-500) 100%) no-repeat 0% 66.6%,
 
             linear-gradient(90deg,

@@ -133,25 +133,33 @@
                 <input checked id="torso" type="radio" name="toggle">
                 <label for="head">Head</label>
                 <input id="head" type="radio" name="toggle">
+                <label for="color">Color</label>
+                <input id="color" type="radio" name="toggle">
             </fieldset>
             <fieldset>
                 <legend>Torso</legend>
                 <label>
                     Torso-x
                     <div>
-                        <input type="range" min="0" max="10" value="4" step="any" name="torso-x" data-unit="em">
+                        <div>
+                            <input type="range" min="0" max="10" value="4" step="any" name="torso-x" data-unit="em">
+                        </div>
                     </div>
                 </label>
                 <label>
                     Torso-y
                     <div>
-                        <input type="range" min="0" max="15" value="6" step="any" name="torso-y" data-unit="em">
+                        <div>
+                            <input type="range" min="0" max="15" value="6" step="any" name="torso-y" data-unit="em">
+                        </div>
                     </div>
                 </label>
                 <label>
                     Torso-z
                     <div>
-                        <input type="range" min="0" max="30" value="16" step="any" name="torso-z" data-unit="em">
+                        <div>
+                            <input type="range" min="0" max="30" value="16" step="any" name="torso-z" data-unit="em">
+                        </div>
                     </div>
                 </label>
             </fieldset>
@@ -160,23 +168,42 @@
                 <label>
                     Head-x
                     <div>
-                        <input type="range" min="0" max="10" value="5" step="any" name="head-x" data-unit="em">
+                        <div>
+                            <input type="range" min="0" max="10" value="5" step="any" name="head-x" data-unit="em">
+                        </div>
                     </div>
                 </label>
                 <label>
                     Head-y
                     <div>
-                        <input type="range" min="0" max="10" value="4" step="any" name="head-y" data-unit="em">
+                        <div>
+                            <input type="range" min="0" max="10" value="4" step="any" name="head-y" data-unit="em">
+                        </div>
                     </div>
                 </label>
                 <label>
                     Head-z
                     <div>
-                        <input type="range" min="0" max="10" value="5" step="any" name="head-z" data-unit="em">
+                        <div>
+                            <input type="range" min="0" max="10" value="5" step="any" name="head-z" data-unit="em">
+                        </div>
                     </div>
                 </label>
             </fieldset>
-            <!-- <button type="reset">Reset</button> -->
+            <fieldset>
+                <label>
+                    Gray
+                    <input checked type="radio" name="color" value="gray">
+                </label>
+                <label>
+                    Orange
+                    <input type="radio" name="color" value="orange">
+                </label>
+                <label>
+                    Brown
+                    <input type="radio" name="color" value="brown">
+                </label>
+            </fieldset>
         </form>
     </section>
 

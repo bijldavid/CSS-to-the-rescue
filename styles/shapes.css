@@ -11,24 +11,9 @@
 
 cat {
     position: absolute;
-
-    transform: rotateX(-20deg) rotateY( calc(360deg - var(--camera-rotation)))
-}
-
-/* @keyframes rotation {
-    0% {
-        transform: rotateX(-30deg) rotateY(0);
-    }
-
-    100% {
-        transform: rotateX(-30deg) rotateY(360deg);
-    }
-} */
-
-
-cat {
     transform-style: preserve-3d;
     cursor: grab;
+    transform: rotateX(-20deg) rotateY( calc(360deg - var(--camera-rotation)))
 }
 
 cat:hover header {
@@ -110,7 +95,7 @@ tail {
     height: calc(var(--torso-y) / 6);
     background-color: green;
     translate: calc(var(--torso-x) / 4 + 50%) calc(var(--torso-y) / 6 - 50%) calc(var(--torso-z) / 16);
-    transform-origin: bottom;
+    transform-origin: top;
     rotate: x 45deg;
 
     &>div {

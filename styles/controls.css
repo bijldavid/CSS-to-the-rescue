@@ -58,11 +58,42 @@ section {
 section>div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-section div label {
+section>div label {
     font-size: 1em;
     font-weight: var(--extra-bold);
+}
+
+section>div>input[type="checkbox"] {
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    margin: 0;
+}
+
+section>div>input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/arrow-checkbox.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+}
+
+section>div>input[type="checkbox"]:checked::before {
+    transform: rotate(90deg);
 }
 
 section:has(> div > input:checked) form {
@@ -88,11 +119,19 @@ fieldset:nth-of-type(1) {
     border-radius: .33em;
 }
 
-form:has(fieldset:nth-of-type(1) input:nth-of-type(1):checked) fieldset:nth-of-type(3) {
+
+form:has(fieldset:nth-of-type(1) input:nth-of-type(1):checked) fieldset:nth-of-type(3),
+form:has(fieldset:nth-of-type(1) input:nth-of-type(1):checked) fieldset:nth-of-type(4) {
     display: none;
 }
 
-form:has(fieldset:nth-of-type(1) input:nth-of-type(2):checked) fieldset:nth-of-type(2) {
+form:has(fieldset:nth-of-type(1) input:nth-of-type(2):checked) fieldset:nth-of-type(2),
+form:has(fieldset:nth-of-type(1) input:nth-of-type(2):checked) fieldset:nth-of-type(4) {
+    display: none;
+}
+
+form:has(fieldset:nth-of-type(1) input:nth-of-type(3):checked) fieldset:nth-of-type(2),
+form:has(fieldset:nth-of-type(1) input:nth-of-type(3):checked) fieldset:nth-of-type(3) {
     display: none;
 }
 
@@ -100,18 +139,16 @@ fieldset:nth-of-type(1) input {
     display: none;
 }
 
-fieldset:nth-of-type(1):has(input:nth-of-type(1):checked) label:nth-of-type(1) {
-    background-color: var(--controls-bg-500);
-    outline: solid 1px var(--controls-border-100);
-}
-
-fieldset:nth-of-type(1):has(input:nth-of-type(2):checked) label:nth-of-type(2) {
+fieldset:nth-of-type(1):has(input:nth-of-type(1):checked) label:nth-of-type(1),
+fieldset:nth-of-type(1):has(input:nth-of-type(2):checked) label:nth-of-type(2),
+fieldset:nth-of-type(1):has(input:nth-of-type(3):checked) label:nth-of-type(3) {
     background-color: var(--controls-bg-500);
     outline: solid 1px var(--controls-border-100);
 }
 
 fieldset:nth-of-type(1) label:nth-of-type(1),
-fieldset:nth-of-type(1) label:nth-of-type(2) {
+fieldset:nth-of-type(1) label:nth-of-type(2),
+fieldset:nth-of-type(1) label:nth-of-type(3) {
     padding: .5em 1em;
     border-radius: .33em;
     display: flex;
@@ -119,6 +156,38 @@ fieldset:nth-of-type(1) label:nth-of-type(2) {
 }
 
 /* -=-=-=-=-=-=- FIELDSET 2 & 3 -=-=-=-=-=-=- */
+
+/* sliders */
+
+form fieldset:nth-of-type(1)~fieldset label input[type="range"] {
+    position: relative;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background-color: var(--controls-border-200);
+    outline: none;
+    z-index: 1;
+}
+
+form fieldset:nth-of-type(1)~fieldset label input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+form fieldset:nth-of-type(1)~fieldset label input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+}
 
 form fieldset:nth-of-type(1)~fieldset {
     display: flex;
@@ -134,19 +203,21 @@ form fieldset:nth-of-type(1)~fieldset label {
     padding: 1em;
     border-radius: 7.5px;
     border: 1px solid var(--controls-border-200);
+    width: 100%;
 }
 
-form fieldset:nth-of-type(1)~fieldset label div {
+
+form fieldset:nth-of-type(1)~fieldset label>div {
     position: relative;
     width: 100%;
-    padding: 1.25em .75em 1.25em 3em;
+    padding: 1.25em 2em 1.25em 4em;
     border-radius: 10px;
     display: flex;
     justify-content: end;
     background-color: var(--controls-bg-300);
 }
 
-form fieldset:nth-of-type(1)~fieldset label div::before {
+form fieldset:nth-of-type(1)~fieldset label>div::before {
     content: '';
     position: absolute;
     height: 15px;
@@ -154,5 +225,83 @@ form fieldset:nth-of-type(1)~fieldset label div::before {
     top: 50%;
     left: 1.2em;
     translate: 0 -50%;
-    background-color: #fff;
+}
+
+
+form fieldset:nth-of-type(1)~fieldset label:nth-of-type(3n + 1)>div::before {
+    background-image: url(/images/x-axis.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+form fieldset:nth-of-type(1)~fieldset label:nth-of-type(3n + 2)>div::before {
+    background-image: url(/images/y-axis.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+form fieldset:nth-of-type(1)~fieldset label:nth-of-type(3n + 3)>div::before {
+    background-image: url(/images/z-axis.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+}
+
+form fieldset:nth-of-type(1)~fieldset label>div div {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 7.5px;
+    background: repeating-linear-gradient(90deg,
+            transparent 0px,
+            transparent 8px,
+            var(--controls-border-200) 8px,
+            var(--controls-border-200) 9px);
+    background-position: -4px 0;
+}
+
+
+form fieldset:nth-of-type(1)~fieldset label>div div::before,
+form fieldset:nth-of-type(1)~fieldset label>div div::after {
+    position: absolute;
+    content: '';
+    height: 7.5px;
+    width: 7.5px;
+    border-radius: 50%;
+    background-color: var(--controls-border-200);
+}
+
+
+form fieldset:nth-of-type(1)~fieldset label>div div::before {
+    top: 50%;
+    translate: calc(-100% + 1px) -50%;
+    left: 0;
+}
+
+form fieldset:nth-of-type(1)~fieldset label>div div::after {
+    top: 50%;
+    translate: calc(100% - 1px) -50%;
+    right: 0;
+}
+
+/* -=-=-=-=-=-=- FIELDSET 4 -=-=-=-=-=-=- */
+
+form fieldset:nth-of-type(1)~fieldset:nth-of-type(4) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .5em;
+    background-color: var(--controls-bg-500);
+    padding: 1em;
+    border-radius: 7.5px;
+    border: 1px solid var(--controls-border-200);
+}
+
+form fieldset:nth-of-type(1)~fieldset:nth-of-type(4) label {
+    border: none;
+    padding: .75em;
+    background-color: var(--controls-bg-200);
+    width: max-content;
 }
