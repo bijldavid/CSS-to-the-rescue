@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/shapes.css">
     <link rel="stylesheet" href="styles/controls.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <title>Kat</title>
 </head>
 
@@ -142,7 +143,7 @@
                     Torso-x
                     <div>
                         <div>
-                            <input type="range" min="0" max="10" value="4" step="any" name="torso-x" data-unit="em">
+                            <input type="range" min="0" max="10" value="4" step=".1" name="unitless-torso-x">
                         </div>
                     </div>
                 </label>
@@ -150,7 +151,7 @@
                     Torso-y
                     <div>
                         <div>
-                            <input type="range" min="0" max="15" value="6" step="any" name="torso-y" data-unit="em">
+                            <input type="range" min="0" max="15" value="6" step=".1" name="unitless-torso-y">
                         </div>
                     </div>
                 </label>
@@ -158,7 +159,7 @@
                     Torso-z
                     <div>
                         <div>
-                            <input type="range" min="0" max="30" value="16" step="any" name="torso-z" data-unit="em">
+                            <input type="range" min="0" max="30" value="16" step=".1" name="unitless-torso-z">
                         </div>
                     </div>
                 </label>
@@ -169,7 +170,7 @@
                     Head-x
                     <div>
                         <div>
-                            <input type="range" min="0" max="10" value="5" step="any" name="head-x" data-unit="em">
+                            <input type="range" min="0" max="10" value="5" step=".1" name="unitless-head-x">
                         </div>
                     </div>
                 </label>
@@ -177,7 +178,7 @@
                     Head-y
                     <div>
                         <div>
-                            <input type="range" min="0" max="10" value="4" step="any" name="head-y" data-unit="em">
+                            <input type="range" min="0" max="10" value="4" step=".1" name="unitless-head-y">
                         </div>
                     </div>
                 </label>
@@ -185,7 +186,7 @@
                     Head-z
                     <div>
                         <div>
-                            <input type="range" min="0" max="10" value="5" step="any" name="head-z" data-unit="em">
+                            <input type="range" min="0" max="10" value="5" step=".1" name="unitless-head-z">
                         </div>
                     </div>
                 </label>
@@ -207,11 +208,27 @@
         </form>
     </section>
 
+    <section>
+        <h2>Control panel</h2>
+        <label for="walk">
+            Walk
+        </label>
+        <label for="camera">
+            Camera
+        </label>
+        <div>
+            <div>
+                <input id="walk" type="range" min="-5" max="5" value="0" step=".001" name="unitless-walk">
+            </div>
+        </div>
+        <input id="camera" type="range" min="0" max="1" value=".45" step=".001" name="unitless-camera-rotation">
+    </section>
 
-    <label>
-        Camera
-        <input type="range" min="0" max="720" value="330" step="any" name="camera-rotation" data-unit="deg">
-    </label>
+
+
+
+
+
     <script src="script.js"></script>
 </body>
 

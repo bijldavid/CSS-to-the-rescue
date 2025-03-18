@@ -1,11 +1,19 @@
 :root {
-    --torso-x: calc(var(--cat-x) * 4);
-    --torso-y: calc(var(--cat-y) * 6);
-    --torso-z: calc(var(--cat-z) * 16);
+    --torso-x: calc(var(--unitless-torso-x) * 1em);
+    --torso-y: calc(var(--unitless-torso-y) * 1em);
+    --torso-z: calc(var(--unitless-torso-z) * 1em);
 
-    --head-x: calc(var(--cat-x) * 5);
-    --head-y: calc(var(--cat-y) * 4);
-    --head-z: calc(var(--cat-z) * 5);
+    --head-x: calc(var(--unitless-head-x) * 1em);
+    --head-y: calc(var(--unitless-head-y) * 1em);
+    --head-z: calc(var(--unitless-head-z) * 1em);
+
+    --camera-rotations: 2turn;
+    --camera-rotation: calc(var(--unitless-camera-rotation) * var(--camera-rotations));
+
+    --walk-em: calc(var(--unitless-walk) * 1em);
+    --walk-progress: calc((var(--unitless-walk) + 5) / 10);
+    --walk-s: calc(var(--walk-progress) * -2s);
+
 }
 
 
@@ -13,11 +21,18 @@ cat {
     position: absolute;
     transform-style: preserve-3d;
     cursor: grab;
-    transform: rotateX(-20deg) rotateY( calc(360deg - var(--camera-rotation)))
+    transform:
+        rotateX(-20deg) rotateY(calc(360deg - var(--camera-rotation))) translateY(-3em) translateZ(calc(var(--walk-em) * 3));
+    transition: transform .05s linear;
 }
 
+cat header {
+    transition: rotate 1s ease;
+}
+
+
 cat:hover header {
-    animation: tilt 2s ease-in-out forwards;
+    rotate: z 30deg;
 }
 
 
@@ -231,7 +246,7 @@ rf-leg {
     height: calc(var(--torso-z) / 16 * 2);
     translate: calc(var(--torso-x) / 2) calc(var(--torso-z) / 16 * 12) 0;
     background-color: green;
-    animation: walk 2s linear -1s infinite;
+    animation: walk-right 2s linear var(--walk-s) paused;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
@@ -243,7 +258,7 @@ lf-leg {
     height: calc(var(--torso-z) / 16 * 2);
     translate: 0 calc(var(--torso-z) / 16 * 12) 0;
     background-color: green;
-    animation: walk 2s linear infinite;
+    animation: walk-left 2s linear var(--walk-s) paused;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
@@ -255,7 +270,7 @@ rb-leg {
     height: calc(var(--torso-z) / 16 * 2);
     translate: calc(var(--torso-x) / 2) calc(var(--torso-z) / 16 * 1) 0;
     background-color: green;
-    animation: walk 2s linear -1s infinite;
+    animation: walk-right 2s linear var(--walk-s) paused;
 }
 
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
@@ -267,11 +282,61 @@ lb-leg {
     height: calc(var(--torso-z) / 16 * 2);
     translate: 0 calc(var(--torso-z) / 16 * 1) 0;
     background-color: green;
-    animation: walk 2s linear infinite;
+    animation: walk-left 2s linear var(--walk-s) paused;
 }
 
-@keyframes walk {
+@keyframes walk-left {
     0% {
+        transform: rotateX(-45deg);
+    }
+
+    12.5% {
+        transform: rotateX(45deg);
+    }
+
+    25% {
+        transform: rotateX(-45deg);
+    }
+
+    37.5% {
+        transform: rotateX(45deg);
+    }
+
+    50% {
+        transform: rotateX(-45deg);
+    }
+
+    62.5% {
+        transform: rotateX(45deg);
+    }
+
+    75% {
+        transform: rotateX(-45deg);
+    }
+
+    87.5% {
+        transform: rotateX(45deg);
+    }
+
+    100% {
+        transform: rotateX(-45deg);
+    }
+}
+
+@keyframes walk-right {
+    0% {
+        transform: rotateX(45deg);
+    }
+
+    12.5% {
+        transform: rotateX(-45deg);
+    }
+
+    25% {
+        transform: rotateX(45deg);
+    }
+
+    37.5% {
         transform: rotateX(-45deg);
     }
 
@@ -279,8 +344,20 @@ lb-leg {
         transform: rotateX(45deg);
     }
 
-    100% {
+    62.5% {
         transform: rotateX(-45deg);
+    }
+
+    75% {
+        transform: rotateX(45deg);
+    }
+
+    87.5% {
+        transform: rotateX(-45deg);
+    }
+
+    100% {
+        transform: rotateX(45deg);
     }
 }
 
@@ -561,15 +638,5 @@ header {
         translate: var(--head-x) calc(var(--head-y) / -4) var(--head-z);
         rotate: y 90deg;
         transform-origin: left;
-    }
-}
-
-@keyframes tilt {
-    0% {
-        rotate: z 0deg;
-    }
-
-    100% {
-        rotate: z 20deg;
     }
 }

@@ -3,13 +3,13 @@
 /* ========================== */
 
 :root {
-    /* fonts */
-    --heavy: 900;
-    --extra-bold: 800;
-    --bold: 700;
-    --demi-bold: 600;
-    --medium: 500;
-    --light: 400;
+  /* fonts */
+  --heavy: 900;
+  --extra-bold: 800;
+  --bold: 700;
+  --demi-bold: 600;
+  --medium: 500;
+  --light: 400;
 
   interpolate-size: allow-keywords;
 }
