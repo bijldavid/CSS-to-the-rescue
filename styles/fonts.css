@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'minecraft-font';
-    src: url('/fonts/Minecraft-Seven_v2.woff2') format('woff2');
+    src: url('../fonts/Minecraft-Seven_v2.woff2') format('woff2');
     font-style: normal;
     font-weight: 400;
 }
