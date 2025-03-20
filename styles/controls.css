@@ -9,44 +9,6 @@
     --controls-border-100: #E5E5E5;
 }
 
-
-/* ========================== */
-/* CAMERA */
-/* ========================== */
-
-body>section:nth-of-type(2) {
-    position: absolute;
-    left: 50%;
-    bottom: 2em;
-    translate: -50% 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: var(--controls-bg-300);
-    border: 1px solid var(--controls-border-200);
-    border-radius: 10px;
-    padding: .8em 1em;
-}
-
-body>section:nth-of-type(2) h1 {
-    font-family: catfont;
-    font-size: clamp(1em, 3vw, 2em);
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-body>section:nth-of-type(2) label {
-    display: flex;
-    width: 33vw;
-}
-
-body>section:nth-of-type(2) label input {
-    width: 100%;
-}
-
-
 /* -=-=-=-=-=-=- GENERAL STYLING -=-=-=-=-=-=- */
 
 form fieldset:not(fieldset:nth-of-type(1)) {
@@ -57,9 +19,41 @@ form label {
     font-size: .75em;
 }
 
+input[type="range"] {
+    position: relative;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background-color: var(--controls-border-200);
+    outline: none;
+    z-index: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+
+
 
 /* ========================== */
-/* CONTROLS */
+/* CAT CONTROLS */
 /* ========================== */
 
 section:nth-of-type(1) {
@@ -74,6 +68,16 @@ section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+section:nth-of-type(1)>h2 {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 /* -=-=-=-=-=-=- CHECKBOX + h2 -=-=-=-=-=-=- */
@@ -181,38 +185,6 @@ fieldset:nth-of-type(1) label:nth-of-type(3) {
 }
 
 /* -=-=-=-=-=-=- FIELDSET 2 & 3 -=-=-=-=-=-=- */
-
-/* sliders */
-
-form fieldset:nth-of-type(1)~fieldset label input[type="range"] {
-    position: relative;
-    -webkit-appearance: none;
-    width: 100%;
-    height: 2px;
-    background-color: var(--controls-border-200);
-    outline: none;
-    z-index: 1;
-}
-
-form fieldset:nth-of-type(1)~fieldset label input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
-    border: none;
-}
-
-form fieldset:nth-of-type(1)~fieldset label input[type="range"]::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
-    border: none;
-}
 
 form fieldset:nth-of-type(1)~fieldset {
     display: flex;
@@ -329,4 +301,128 @@ form fieldset:nth-of-type(1)~fieldset:nth-of-type(4) label {
     padding: .75em;
     background-color: var(--controls-bg-200);
     width: max-content;
+}
+
+form fieldset:nth-of-type(1)~fieldset:nth-of-type(4) label {
+    accent-color: var(--controls-bg-500);
+}
+
+
+
+/* ========================== */
+/* CAMERA + WALK */
+/* ========================== */
+
+body>section:nth-of-type(2) {
+    position: absolute;
+    left: 50%;
+    bottom: 2em;
+    translate: -50% 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    background-color: var(--controls-bg-300);
+    border: 1px solid var(--controls-border-200);
+    border-radius: 10px;
+    padding: .8em 1em;
+}
+
+body>section:nth-of-type(2) h1 {
+    font-size: 1em;
+    text-align: center;
+}
+
+body>section:nth-of-type(2) label {
+    font-size: .85em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--controls-bg-500);
+    padding: 1em;
+    border-radius: 7.5px;
+    border: 1px solid var(--controls-border-200);
+    width: 100%;
+}
+
+body>section:nth-of-type(2) label span {
+    position: relative;
+    width: 5.5em;
+    text-align: right;
+}
+
+body>section:nth-of-type(2) label span::before {
+    position: absolute;
+    content: '';
+    background-position: center;
+    background-repeat: no-repeat;
+
+    top: 50%;
+    translate: 0 -50%;
+    left: 0;
+}
+
+body>section:nth-of-type(2) label:nth-of-type(1) span::before {
+    background-image: url(/images/paws.png);
+    background-size: 22.5px;
+    height: 22.5px;
+    width: 22.5px;
+}
+
+body>section:nth-of-type(2) label:nth-of-type(2) span::before {
+    background-image: url(/images/video-camera.png);
+    height: 15px;
+    width: 15px;
+    background-size: 15px;
+}
+
+
+body>section:nth-of-type(2) label>div {
+    position: relative;
+    padding: 1.25em 2em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+    background-color: var(--controls-bg-300);
+}
+
+body>section:nth-of-type(2) label>div>div {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 7.5px;
+    background: repeating-linear-gradient(90deg,
+            transparent 0px,
+            transparent 8px,
+            var(--controls-border-200) 8px,
+            var(--controls-border-200) 9px);
+}
+
+body>section:nth-of-type(2) label>div>div::before,
+body>section:nth-of-type(2) label>div>div::after {
+    position: absolute;
+    content: '';
+    height: 7.5px;
+    width: 7.5px;
+    border-radius: 50%;
+    background-color: var(--controls-border-200);
+}
+
+
+body>section:nth-of-type(2) label>div>div::before {
+    top: 50%;
+    translate: calc(-100% + 1px) -50%;
+    left: 0;
+}
+
+body>section:nth-of-type(2) label>div>div::after {
+    top: 50%;
+    translate: calc(100% - 1px) -50%;
+    right: 0;
+}
+
+body>section:nth-of-type(2) label div div input {
+    width: 25vw;
 }

@@ -139,7 +139,7 @@ cat div:nth-of-type(6)::before {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 /* TORSO */
 
-torso {
+main {
 
 
 
@@ -659,7 +659,7 @@ torso {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 /* TAIL */
 
-tail {
+ul {
 
     /* front */
     &>div:nth-of-type(1) {
@@ -673,7 +673,7 @@ tail {
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* TAIL2 */
 
-        tail2 {
+        ol {
 
             /* front */
             &>div:nth-of-type(1) {
@@ -811,7 +811,7 @@ tail {
 /* ALL LEGS */
 
 /* front */
-rf-leg>div:nth-of-type(1) {
+footer:nth-of-type(1)>div:nth-of-type(1) {
     background: linear-gradient(90deg,
             var(--white-500) 50%, var(--white-500) 50%) no-repeat 0% 0%,
 
@@ -829,7 +829,7 @@ rf-leg>div:nth-of-type(1) {
     background-size: 100% 21%;
 }
 
-lf-leg>div:nth-of-type(1) {
+footer:nth-of-type(2)>div:nth-of-type(1) {
     background: linear-gradient(90deg,
             var(--white-500) 50%, var(--white-500) 50%) no-repeat 0% 0%,
 
@@ -847,7 +847,7 @@ lf-leg>div:nth-of-type(1) {
     background-size: 100% 21%;
 }
 
-rb-leg>div:nth-of-type(1) {
+footer:nth-of-type(3)>div:nth-of-type(1) {
     background: linear-gradient(90deg,
             var(--gray-100) 50%, var(--gray-300) 50%) no-repeat 0% 0%,
 
@@ -865,7 +865,7 @@ rb-leg>div:nth-of-type(1) {
     background-size: 100% 21%;
 }
 
-lb-leg>div:nth-of-type(1) {
+footer:nth-of-type(4)>div:nth-of-type(1) {
     background: linear-gradient(90deg,
             var(--gray-100) 50%, var(--gray-300) 50%) no-repeat 0% 0%,
 
@@ -884,7 +884,7 @@ lb-leg>div:nth-of-type(1) {
 }
 
 /* back */
-rf-leg>div:nth-of-type(2) {
+footer:nth-of-type(1)>div:nth-of-type(2) {
     background: linear-gradient(90deg,
             var(--white-500) 50%, var(--white-500) 50%) no-repeat 0% 0%,
 
@@ -902,7 +902,7 @@ rf-leg>div:nth-of-type(2) {
     background-size: 100% 21%;
 }
 
-lf-leg>div:nth-of-type(2) {
+footer:nth-of-type(2)>div:nth-of-type(2) {
     background: linear-gradient(90deg,
             var(--white-500) 50%, var(--white-500) 50%) no-repeat 0% 0%,
 
@@ -920,7 +920,7 @@ lf-leg>div:nth-of-type(2) {
     background-size: 100% 21%;
 }
 
-rb-leg>div:nth-of-type(2) {
+footer:nth-of-type(3)>div:nth-of-type(2) {
     background: linear-gradient(90deg,
             var(--gray-300) 50%, var(--gray-100) 50%) no-repeat 0% 0%,
 
@@ -938,7 +938,7 @@ rb-leg>div:nth-of-type(2) {
     background-size: 100% 21%;
 }
 
-lb-leg>div:nth-of-type(2) {
+footer:nth-of-type(4)>div:nth-of-type(2) {
     background: linear-gradient(90deg,
             var(--gray-300) 50%, var(--gray-100) 50%) no-repeat 0% 0%,
 
@@ -957,41 +957,41 @@ lb-leg>div:nth-of-type(2) {
 }
 
 /* top */
-rf-leg>div:nth-of-type(3) {
+footer:nth-of-type(1)>div:nth-of-type(3) {
     /* niks */
 }
 
-lf-leg>div:nth-of-type(3) {
+footer:nth-of-type(2)>div:nth-of-type(3) {
     /* niks */
 }
 
-rb-leg>div:nth-of-type(3) {
+footer:nth-of-type(3)>div:nth-of-type(3) {
     /* niks */
 }
 
-lb-leg>div:nth-of-type(3) {
+footer:nth-of-type(4)>div:nth-of-type(3) {
     /* niks */
 }
 
 /* bottom */
-rf-leg>div:nth-of-type(4) {
+footer:nth-of-type(1)>div:nth-of-type(4) {
     background-color: var(--white-500);
 }
 
-lf-leg>div:nth-of-type(4) {
+footer:nth-of-type(2)>div:nth-of-type(4) {
     background-color: var(--white-500);
 }
 
-rb-leg>div:nth-of-type(4) {
+footer:nth-of-type(3)>div:nth-of-type(4) {
     background-color: var(--gray-300);
 }
 
-lb-leg>div:nth-of-type(4) {
+footer:nth-of-type(4)>div:nth-of-type(4) {
     background-color: var(--gray-300);
 }
 
 /* left */
-rf-leg>div:nth-of-type(5) {
+footer:nth-of-type(1)>div:nth-of-type(5) {
     background: linear-gradient(90deg,
             var(--white-400) 20%,
             0, var(--white-400) 40%,
@@ -1008,7 +1008,7 @@ rf-leg>div:nth-of-type(5) {
     background-size: 100% 50%;
 }
 
-lf-leg>div:nth-of-type(5) {
+footer:nth-of-type(2)>div:nth-of-type(5) {
     background: linear-gradient(90deg,
             var(--white-400) 20%,
             0, var(--white-400) 40%,
@@ -1025,7 +1025,7 @@ lf-leg>div:nth-of-type(5) {
     background-size: 100% 50%;
 }
 
-rb-leg>div:nth-of-type(5) {
+footer:nth-of-type(3)>div:nth-of-type(5) {
     background: linear-gradient(90deg,
             var(--white-100) 20%,
             0, var(--white-300) 40%,
@@ -1042,7 +1042,7 @@ rb-leg>div:nth-of-type(5) {
     background-size: 100% 50%;
 }
 
-lb-leg>div:nth-of-type(5) {
+footer:nth-of-type(4)>div:nth-of-type(5) {
     background: linear-gradient(90deg,
             var(--white-100) 20%,
             0, var(--white-300) 40%,
@@ -1060,7 +1060,7 @@ lb-leg>div:nth-of-type(5) {
 }
 
 /* right */
-rf-leg>div:nth-of-type(6) {
+footer:nth-of-type(1)>div:nth-of-type(6) {
     background: linear-gradient(90deg,
             var(--white-400) 20%,
             0, var(--white-400) 40%,
@@ -1077,7 +1077,7 @@ rf-leg>div:nth-of-type(6) {
     background-size: 100% 50%;
 }
 
-lf-leg>div:nth-of-type(6) {
+footer:nth-of-type(2)>div:nth-of-type(6) {
     background: linear-gradient(90deg,
             var(--white-400) 20%,
             0, var(--white-400) 40%,
@@ -1094,7 +1094,7 @@ lf-leg>div:nth-of-type(6) {
     background-size: 100% 50%;
 }
 
-rb-leg>div:nth-of-type(6) {
+footer:nth-of-type(3)>div:nth-of-type(6) {
     background: linear-gradient(90deg,
             var(--white-100) 20%,
             0, var(--white-300) 40%,
@@ -1111,7 +1111,7 @@ rb-leg>div:nth-of-type(6) {
     background-size: 100% 50%;
 }
 
-lb-leg>div:nth-of-type(6) {
+footer:nth-of-type(4)>div:nth-of-type(6) {
     background: linear-gradient(90deg,
             var(--white-100) 20%,
             0, var(--white-300) 40%,
@@ -1169,7 +1169,7 @@ header {
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* MOUTH */
 
-        mouth {
+        output {
 
             /* front */
             &>div:nth-of-type(1) {
@@ -1303,7 +1303,7 @@ header {
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* EARS */
 
-        ears {
+        aside {
 
             /* front */
             &>div>div:nth-of-type(1) {

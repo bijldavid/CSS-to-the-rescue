@@ -16,24 +16,24 @@
 
 <body>
     <cat>
-        <torso>
-            <!-- put slider to pet the cat -->
+        <textarea type="text" placeholder="Momo"></textarea>
+        <main>
             <!-- front -->
             <div>
                 <header>
                     <div>
-                        <mouth>
+                        <output>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
-                        </mouth>
+                        </output>
                     </div>
                     <div></div>
                     <div>
-                        <ears>
+                        <aside>
                             <div>
                                 <div></div>
                                 <div></div>
@@ -50,7 +50,7 @@
                                 <div></div>
                                 <div></div>
                             </div>
-                        </ears>
+                        </aside>
                     </div>
                     <div></div>
                     <div></div>
@@ -59,71 +59,72 @@
             </div>
             <!-- back -->
             <div>
-                <tail>
+                <ul>
                     <div></div>
                     <div>
-                        <tail2>
+                        <ol>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
-                        </tail2>
+                        </ol>
                     </div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
-                </tail>
+                </ul>
             </div>
             <!-- top -->
             <div></div>
             <!-- bottom -->
             <div>
-                <rf-leg>
+                <footer>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
-                </rf-leg>
-                <lf-leg>
+                </footer>
+                <footer>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
-                </lf-leg>
-                <rb-leg>
+                </footer>
+                <footer>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
-                </rb-leg>
-                <lb-leg>
+                </footer>
+                <footer>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
-                </lb-leg>
+                </footer>
             </div>
             <!-- left -->
             <div></div>
             <!-- right -->
             <div></div>
-        </torso>
+        </main>
     </cat>
 
 
 
     <section>
+        <h2>Cat controls</h2>
         <div>
             <label for="cat-controls">Cat controls</label>
             <input id="cat-controls" type="checkbox"></input>
@@ -209,19 +210,25 @@
     </section>
 
     <section>
-        <h2>Control panel</h2>
+        <h1>Control panel</h1>
         <label for="walk">
-            Walk
-        </label>
-        <label for="camera">
-            Camera
-        </label>
-        <div>
+            <span>Walk</span>
             <div>
-                <input id="walk" type="range" min="-5" max="5" value="0" step=".001" name="unitless-walk">
+                <div>
+                    <input id="walk" type="range" min="-5" max="5" value="0" step=".001" name="unitless-walk">
+                </div>
             </div>
-        </div>
-        <input id="camera" type="range" min="0" max="1" value=".45" step=".001" name="unitless-camera-rotation">
+        </label>
+
+        <label for="Camera">
+            <span>Camera</span>
+            <div>
+                <div>
+                    <input id="camera" type="range" min="0" max="1" value=".45" step=".001"
+                        name="unitless-camera-rotation">
+                </div>
+            </div>
+        </label>
     </section>
 
 

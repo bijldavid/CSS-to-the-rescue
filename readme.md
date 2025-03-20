@@ -2,6 +2,10 @@
 
 ---
 
+<br>
+<br>
+<br>
+
 > ## Week 1
 > **<sub><sup>24 feb t/m 28 feb</sup></sub>**
 
@@ -19,14 +23,13 @@
 <img src="images/readme-images/cat-sketch.png" width="560" height="360"><br>
 Verder, ben ik bezig geweest met het expirimenteren binnen 3D css. Ik heb namelijk een soort cubesje gemaakt *(zie code ↓↓↓)*<br>
 
-```
+``` css
 div {
     position: fixed;
     width: 10em;
     aspect-ratio: 1;
     opacity: .5;
 }
-
 
 .red {
     background-color: red;
@@ -62,6 +65,10 @@ Output ↓↓↓<br>
 
 ---
 
+<br>
+<br>
+<br>
+
 > ## Week 2
 > **<sub><sup>3 t/m 7 mar</sup></sub>**
 
@@ -92,7 +99,7 @@ Nu ik wat meer ervaring had met 3D CSS, ging het allemaal eigenlijk best snel. U
 <img width="349" height="192" src="images/readme-images/cat-stretched.png">
 <img width="349" height="192" src="images/readme-images/cat-stretched2.png">
 
-```
+``` css
     /* normale dimensies */
     --torso-x: calc(var(--cat-x) * 4);
     --torso-y: calc(var(--cat-y) * 6);
@@ -105,6 +112,10 @@ Volgende week is mijn doel om de kat helemaal af te maken:<br>
 Daarna wil ik gaan beginnen aan de interface zelf. Dus knoppen verzinnen en spelen met een slider.
 
 ---
+
+<br>
+<br>
+<br>
 
 > ## Week 3
 > **<sub><sup>10 t/m 14 mar</sup></sub>**
@@ -126,8 +137,8 @@ Toen de kat volledig getextureerd was, kon ik verder met het koppelen van de cus
 Nadat dit werkte, ben ik gaan nadenken over hoe ik het interface van de sliders wilde visualiseren. Ik had hiervoor snel een ontwerp gemaakt en ben nu bezig met het nabouwen van dit design.<br>
 <img width="465" height="400" src="images/readme-images/interface.png">
 
-```
-*/ code voor het uitklap systeem /*
+``` css
+/* code voor het uitklap systeem */
 section:has(> div > input:checked) form {
     display: block;
     display: flex;
@@ -142,12 +153,33 @@ Voor volgende week wil ik graag:<br>
 
 ---
 
+<br>
+<br>
+<br>
+
 > ## Week 4
 > **<sub><sup>17 t/m 21 mar</sup></sub>**
 
-**Updates:** <br>updates hier...
+**Progressie:** <br>
+Deze week is alweer de laatste week. Ik ben verder gegaan met de doelen van vorige week. Ik heb de animatie van de benen van de kat en de `transform: translateY()` van de kat samen aan één slider kunnen koppelen—met enige moeite. De moeilijkheid lag in het feit dat de beenanimatie berust op de `animation-delay` property. Deze property moet een negatieve waarde hebben om het idee te laten werken. Mijn `input type="range"` ging echter van -1 tot 1, waardoor het in eerste instantie niet helemaal werkte. Uiteindelijk hebben we, met wat hulp van AI en Nils, een wiskundige omweg kunnen vinden.
+
+``` css
+    /* uiteindelijke oplossing */
+    --walk-progress: calc((var(--unitless-walk) + 5) / 10);
+    --walk-s: calc(var(--walk-progress) * -2s);
+```
+
+Naast de animatie heb ik ook de vachtkleur van de kat aanpasbaar gemaakt. Dit heb ik gedaan met behulp van Modes - style queries. Daarnaast wilde ik graag een van mijn sliders een curve geven. Hiervoor gebruikte ik Sanne’s CodePen als voorbeeld, maar na heel wat geknutsel moest ik het laten bij een 'gefaald experiment'. Bij het implementeren van de code verdween ineens de thumb van de slider. Hier is een CodePen waar het nog wél werkte: https://codepen.io/bijldavid/pen/ogNpomm.
+
+Tot slot heb ik het controlepaneel afgemaakt en een leuke titel aan de pagina toegevoegd in de vorm van een Minecraft nametag. In Minecraft kun je namelijk je huisdieren een naam geven, wat er zo uitziet:<br>
+<img width="500" height="500" src="images/readme-images/nametag-inspo.png">
+<img width="500" height="500" src="images/readme-images/nametag.png">
 
 ---
+
+<br>
+<br>
+<br>
 
 > ## Bronnen
 
@@ -155,9 +187,11 @@ Voor volgende week wil ik graag:<br>
     <li>ChadGPT -> voor allerlei kleine HTML en CSS controles een vraagjes</li>
     <li>https://css-tricks.com/things-watch-working-css-3d/ -> Suggestie van Sanne, een artikel over alles wat 3D css kapot maakt</li>
     <li>https://miocene.io/posts/3d-cube-with-css/3d-cube-with-css/ -> Inspiratie & uitleg over 3D css</li>
-    <li>more to come...</li>
-    <li>more to come...</li>
-    <li>more to come...</li>
+    <li>https://codepen.io/shooft/pen/gOyrVgv -> uitleg over de style queries</li>
+    <li>https://codepen.io/shooft/pen/OPJxyQW -> Codepen van een ronde range</li>
+    <li>flaticon.com -> voor de icoontjes die ik heb gebruikt</li>
+    <li>https://developer.mozilla.org/en-US/docs/Web/CSS/:has -> uitleg over has()</li>
+    <li>https://developer.mozilla.org/en-US/docs/Web/CSS/field-sizing -> dynamische width voor textarea</li>
 </ul>
 
 ---

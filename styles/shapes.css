@@ -22,14 +22,43 @@ cat {
     transform-style: preserve-3d;
     cursor: grab;
     transform:
-        rotateX(-20deg) rotateY(calc(360deg - var(--camera-rotation))) translateY(-3em) translateZ(calc(var(--walk-em) * 3));
+        rotateX(-20deg) rotateY(calc(360deg - var(--camera-rotation))) translateY(-6.5em) translateZ(calc(var(--walk-em) * 3));
     transition: transform .05s linear;
+}
+
+
+cat>textarea {
+    position: absolute;
+    translate: -50% -5em 0;
+    transform: rotateY(var(--camera-rotation));
+
+    background-color: rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: .1em .3em;
+
+    width: max-content;
+    field-sizing: content;
+    height: 1.3em;
+    resize: none;
+
+    font-family: minecraft-font;
+    font-size: 1.5em;
+    line-height: 1.1em;
+    text-align: center;
+    color: #fff;
+}
+
+cat>textarea::placeholder {
+    color: #fff;
+}
+
+cat>textarea:focus {
+    outline: none;
 }
 
 cat header {
     transition: rotate 1s ease;
 }
-
 
 cat:hover header {
     rotate: z 30deg;
@@ -39,7 +68,7 @@ cat:hover header {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 /* TORSO */
 
-torso {
+main {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -104,7 +133,7 @@ torso {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 /* TAIL */
 
-tail {
+ul {
     position: absolute;
     width: calc(var(--torso-x) / 4);
     height: calc(var(--torso-y) / 6);
@@ -132,7 +161,7 @@ tail {
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* TAIL2 */
 
-        tail2 {
+        ol {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -240,7 +269,7 @@ tail {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 /* RIGHT FRONT LEG */
 
-rf-leg {
+footer:nth-of-type(1) {
     position: absolute;
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-z) / 16 * 2);
@@ -252,7 +281,7 @@ rf-leg {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 /* LEFT FRONT LEG */
 
-lf-leg {
+footer:nth-of-type(2) {
     position: absolute;
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-z) / 16 * 2);
@@ -264,7 +293,7 @@ lf-leg {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 /* RIGHT BACK LEG */
 
-rb-leg {
+footer:nth-of-type(3) {
     position: absolute;
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-z) / 16 * 2);
@@ -276,7 +305,7 @@ rb-leg {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 /* LEFT BACK LEG */
 
-lb-leg {
+footer:nth-of-type(4) {
     position: absolute;
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-z) / 16 * 2);
@@ -364,18 +393,18 @@ lb-leg {
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 /* ALL LEGS */
 
-rf-leg>div,
-lf-leg>div,
-rb-leg>div,
-lb-leg>div {
+footer:nth-of-type(1)>div,
+footer:nth-of-type(2)>div,
+footer:nth-of-type(3)>div,
+footer:nth-of-type(4)>div {
     background-color: blue;
 }
 
 /* front */
-rf-leg>div:nth-of-type(1),
-lf-leg>div:nth-of-type(1),
-rb-leg>div:nth-of-type(1),
-lb-leg>div:nth-of-type(1) {
+footer:nth-of-type(1)>div:nth-of-type(1),
+footer:nth-of-type(2)>div:nth-of-type(1),
+footer:nth-of-type(3)>div:nth-of-type(1),
+footer:nth-of-type(4)>div:nth-of-type(1) {
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-y) / 6 * 5);
     transform-origin: top;
@@ -384,10 +413,10 @@ lb-leg>div:nth-of-type(1) {
 }
 
 /* back */
-rf-leg>div:nth-of-type(2),
-lf-leg>div:nth-of-type(2),
-rb-leg>div:nth-of-type(2),
-lb-leg>div:nth-of-type(2) {
+footer:nth-of-type(1)>div:nth-of-type(2),
+footer:nth-of-type(2)>div:nth-of-type(2),
+footer:nth-of-type(3)>div:nth-of-type(2),
+footer:nth-of-type(4)>div:nth-of-type(2) {
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-y) / 6 * 5);
     transform-origin: top;
@@ -396,28 +425,28 @@ lb-leg>div:nth-of-type(2) {
 }
 
 /* top */
-rf-leg>div:nth-of-type(3),
-lf-leg>div:nth-of-type(3),
-rb-leg>div:nth-of-type(3),
-lb-leg>div:nth-of-type(3) {
+footer:nth-of-type(1)>div:nth-of-type(3),
+footer:nth-of-type(2)>div:nth-of-type(3),
+footer:nth-of-type(3)>div:nth-of-type(3),
+footer:nth-of-type(4)>div:nth-of-type(3) {
     display: none;
 }
 
 /* bottom */
-rf-leg>div:nth-of-type(4),
-lf-leg>div:nth-of-type(4),
-rb-leg>div:nth-of-type(4),
-lb-leg>div:nth-of-type(4) {
+footer:nth-of-type(1)>div:nth-of-type(4),
+footer:nth-of-type(2)>div:nth-of-type(4),
+footer:nth-of-type(3)>div:nth-of-type(4),
+footer:nth-of-type(4)>div:nth-of-type(4) {
     width: calc(var(--torso-x) / 2);
     height: calc(var(--torso-z) / 16 * 2);
     translate: 0 0 calc(var(--torso-y) / 6 * -4);
 }
 
 /* left */
-rf-leg>div:nth-of-type(5),
-lf-leg>div:nth-of-type(5),
-rb-leg>div:nth-of-type(5),
-lb-leg>div:nth-of-type(5) {
+footer:nth-of-type(1)>div:nth-of-type(5),
+footer:nth-of-type(2)>div:nth-of-type(5),
+footer:nth-of-type(3)>div:nth-of-type(5),
+footer:nth-of-type(4)>div:nth-of-type(5) {
     width: calc(var(--torso-y) / 6 * 5);
     height: calc(var(--torso-z) / 8);
     transform-origin: left;
@@ -426,10 +455,10 @@ lb-leg>div:nth-of-type(5) {
 }
 
 /* right */
-rf-leg>div:nth-of-type(6),
-lf-leg>div:nth-of-type(6),
-rb-leg>div:nth-of-type(6),
-lb-leg>div:nth-of-type(6) {
+footer:nth-of-type(1)>div:nth-of-type(6),
+footer:nth-of-type(2)>div:nth-of-type(6),
+footer:nth-of-type(3)>div:nth-of-type(6),
+footer:nth-of-type(4)>div:nth-of-type(6) {
     width: calc(var(--torso-y) / 6 * 5);
     height: calc(var(--torso-z) / 8);
     transform-origin: left;
@@ -463,7 +492,7 @@ header {
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* MOUTH */
 
-        mouth {
+        output {
             position: absolute;
             width: 60%;
             height: 50%;
@@ -542,10 +571,11 @@ header {
         /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
         /* EARS */
 
-        ears {
+        aside {
             position: absolute;
             width: 100%;
             height: 100%;
+       
 
 
             &>div {
